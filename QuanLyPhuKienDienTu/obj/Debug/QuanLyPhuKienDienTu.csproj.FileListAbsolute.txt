@@ -1,0 +1,13 @@
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\bin\Debug\QuanLyPhuKienDienTu.exe.config
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\bin\Debug\QuanLyPhuKienDienTu.exe
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\bin\Debug\QuanLyPhuKienDienTu.pdb
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csprojAssemblyReference.cache
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.LoginForm.resources
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.Properties.Resources.resources
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csproj.GenerateResource.cache
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.exe
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.pdb
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.ClientForm.resources
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.MainForm.resources
+C:\Users\DELL\source\repos\QuanLyPhuKienDienTu\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.PayForm.resources
