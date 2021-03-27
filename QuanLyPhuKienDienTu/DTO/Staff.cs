@@ -10,19 +10,15 @@ namespace QuanLyPhuKienDienTu.DTO
     class Staff
     {
         private int id;
-        private string username;
-        private string password;
         private int status;
         private string name;
         private string address;
         private string phone;
 
-        public Staff(int idAccount, string username, string password, 
-            int status, string name, string address, string phone)
+        public Staff(int id, int status, string name,
+                            string address, string phone)
         {
-            this.ID = idAccount;
-            this.Username = username;
-            this.Password = password;
+            this.ID = id;
             this.Status = status;
             this.Name = name;
             this.Address = address;
@@ -31,9 +27,7 @@ namespace QuanLyPhuKienDienTu.DTO
 
         public Staff(DataRow row)
         {
-            this.ID = (int)row["IDAccount"];
-            this.Username = row["Username"].ToString();
-            this.Password = row["Password"].ToString();
+            this.ID = (int)row["IDStaff"];
             this.Status = (int)row["Status"];
             this.Name = row["Name"].ToString();
             this.Address = row["Address"].ToString();
@@ -43,17 +37,7 @@ namespace QuanLyPhuKienDienTu.DTO
         public int ID
         {
             get => id;
-            private set => id = value;
-        }
-        public string Username
-        {
-            get => username;
-            set => username = value;
-        }
-        public string Password
-        {
-            get => password;
-            set => password = value;
+            set => id = value;
         }
         public int Status
         {

@@ -27,21 +27,6 @@ namespace QuanLyPhuKienDienTu
         {
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-
-            int id = StaffDAO.Instance.GetID(username, password);
-
-            if (id != -100)
-            {
-                string newPassword = textBoxNewPassword.Text;
-                if (StaffDAO.Instance.ModifyPassword(id, newPassword)) { 
-                    MessageBox.Show("Đổi mật khẩu thành công");
-                    this.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không thể thực hiện");
-            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using QuanLyPhuKienDienTu.DAO;
-using QuanLyPhuKienDienTu.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +23,7 @@ namespace QuanLyPhuKienDienTu
             string username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
 
-            int status = StaffDAO.Instance.Login(username, password);
+            int status = AccountDAO.Instance.Login(username, password);
 
             if (status == 1)
             {
@@ -43,10 +42,7 @@ namespace QuanLyPhuKienDienTu
 
         private void buttonChangePassWord_Click(object sender, EventArgs e)
         {
-            ModifyPasswordForm form = new ModifyPasswordForm();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            
         }
     }
 }

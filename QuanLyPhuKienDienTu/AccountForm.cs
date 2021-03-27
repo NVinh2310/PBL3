@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyPhuKienDienTu
 {
-    public partial class UpdatePassForm : Form
+    public partial class AccountForm : Form
     {
-        public UpdatePassForm()
+        public AccountForm()
         {
             InitializeComponent();
         }

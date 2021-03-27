@@ -1,2 +1,10 @@
-INSERT INTO Staff (Username, Password, Status, Name, Address, Phone)
-VALUES ('ngocthinh303', '1', 1, N'Ngoc Thinh', '29 Tran Xuan Le', '0898208980');
+﻿INSERT INTO Staff (Name, Address, Phone, Status)
+VALUES (N'Ngọc Thịnh', N'29 Trần Xuân Lê', '0898208980', 1);
+
+
+SELECT * FROM Staff
+
+INSERT INTO Account(IDStaff, Username, Password)
+VALUES (1, 'ngocthinh303', '1')
+
+SELECT * FROM Account

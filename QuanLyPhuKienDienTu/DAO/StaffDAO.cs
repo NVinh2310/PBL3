@@ -38,47 +38,13 @@ namespace QuanLyPhuKienDienTu.DAO
             return staffs;
         }
 
-        public int Login(string username, string password)
-        {
-            int ERROR = -100;
-            int result = ERROR;
+        //public bool ModifyPassword(int id, string newPassword)
+        //{
+        //    string query = string.Format("EXEC USP_ModifyPassword @IDAccount = '{0}', @Password = '{1}'",
+        //                                                                    id, newPassword);
+        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            var status = from staff in StaffDAO.Instance.GetStaffs()
-                      where staff.Username == username && staff.Password == password
-                      select staff.Status;
-
-            foreach (int item in status)
-            {
-                result = item;
-            }
-
-            return result;
-        }
-
-        public int GetID(string username, string password)
-        {
-            int ERROR = -100;
-            int result = ERROR;
-
-            var ids = from staff in StaffDAO.Instance.GetStaffs()
-                      where staff.Username == username && staff.Password == password
-                      select staff.ID;
-
-            foreach (int id in ids)
-            {
-                result = id;
-            }
-
-            return result;
-        }
-
-        public bool ModifyPassword(int id, string newPassword)
-        {
-            string query = string.Format("EXEC USP_ModifyPassword @IDAccount = '{0}', @Password = '{1}'",
-                                                                            id, newPassword);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-            return result > 0;
-        }
+        //    return result > 0;
+        //}
     }
 }
