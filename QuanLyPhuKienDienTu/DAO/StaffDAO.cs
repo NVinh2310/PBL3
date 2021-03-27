@@ -74,12 +74,9 @@ namespace QuanLyPhuKienDienTu.DAO
 
         public bool ModifyPassword(int id, string newPassword)
         {
-            int ERROR = -100;
-            int result = ERROR;
-
             string query = string.Format("EXEC USP_ModifyPassword @IDAccount = '{0}', @Password = '{1}'",
                                                                             id, newPassword);
-            result = DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
