@@ -37,14 +37,5 @@ namespace QuanLyPhuKienDienTu.DAO
 
             return staffs;
         }
-
-        //public bool ModifyPassword(int id, string newPassword)
-        //{
-        //    string query = string.Format("EXEC USP_ModifyPassword @IDAccount = '{0}', @Password = '{1}'",
-        //                                                                    id, newPassword);
-        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-        //    return result > 0;
-        //}
     }
 }

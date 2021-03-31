@@ -27,7 +27,11 @@ namespace QuanLyPhuKienDienTu
 
             if (status == 1)
             {
-                MessageBox.Show("Đăng nhập thành công");
+                MessageBox.Show("Đăng nhập quản lý");
+            }
+            else if (status == 0)
+            {
+                MessageBox.Show("Đây là nhân viên");
             }
             else
             {
@@ -42,7 +46,10 @@ namespace QuanLyPhuKienDienTu
 
         private void buttonChangePassWord_Click(object sender, EventArgs e)
         {
-            
+            ModifyPasswordForm form = new ModifyPasswordForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

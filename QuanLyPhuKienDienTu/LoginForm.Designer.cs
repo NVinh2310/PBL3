@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.buttonExit);
             this.panel2.Controls.Add(this.buttonLogin);
             this.panel2.Controls.Add(this.buttonChangePassWord);
-            this.panel2.Location = new System.Drawing.Point(31, 161);
+            this.panel2.Location = new System.Drawing.Point(31, 177);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(419, 63);
