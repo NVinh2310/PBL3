@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.listViewAccount = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // button1
+            // addBtn
             // 
-            this.button1.ForeColor = System.Drawing.Color.Tomato;
-            this.button1.Location = new System.Drawing.Point(60, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addBtn.ForeColor = System.Drawing.Color.Tomato;
+            this.addBtn.Location = new System.Drawing.Point(496, 30);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(33, 35);
+            this.addBtn.TabIndex = 1;
+            this.addBtn.Text = "+";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // listViewAccount
             // 
             this.listViewAccount.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
@@ -79,13 +82,32 @@
             this.columnHeader4.Text = "Chức vụ";
             this.columnHeader4.Width = 116;
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.ForeColor = System.Drawing.Color.Tomato;
+            this.deleteBtn.Location = new System.Drawing.Point(537, 30);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(33, 35);
+            this.deleteBtn.TabIndex = 39;
+            this.deleteBtn.Text = "-";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 0;
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 0;
+            // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 462);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.listViewAccount);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addBtn);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AccountForm";
@@ -96,10 +118,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.ListView listViewAccount;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

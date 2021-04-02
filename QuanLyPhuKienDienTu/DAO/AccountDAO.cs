@@ -82,6 +82,15 @@ namespace QuanLyPhuKienDienTu.DAO
             return result > 0;
         }
 
+        public bool DeleteAccount(int idStaff)
+        {
+            string query = string.Format("DELETE Account Where IDStaff = {0}", idStaff);
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
         public bool UsernameAvailable(string username)
         {
             List<Account> accounts = AccountDAO.Instance.GetAccounts();

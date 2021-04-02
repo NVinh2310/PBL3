@@ -70,7 +70,8 @@ namespace QuanLyPhuKienDienTu
                 {
                     if (AccountDAO.Instance.InsertAccount(id, username, password))
                     {
-                        MessageBox.Show("Thêm thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thêm thành công !", "Thông báo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadNameIntoComboBox();
                         ResetData();
                         this.Close();
