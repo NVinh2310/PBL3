@@ -17,11 +17,25 @@ namespace QuanLyPhuKienDienTu.View
         {
             InitializeComponent();
             LoadTaiKhoan();
+
         }
 
         private void LoadTaiKhoan()
         {
             dataGridView1.DataSource = BLL_TaiKhoan_View.Instance.GetTaiKhoan();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            FormThemTaiKhoan form = new FormThemTaiKhoan();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
     }
 }

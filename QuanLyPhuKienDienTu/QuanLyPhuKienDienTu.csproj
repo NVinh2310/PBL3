@@ -72,13 +72,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_TaiKhoan_View.cs" />
+    <Compile Include="DTO\CBBItem.cs" />
+    <Compile Include="DTO\Process.cs" />
     <Compile Include="DTO\TaiKhoan_View.cs" />
-    <Compile Include="View\AddAccountForm.cs">
+    <Compile Include="View\FormThemTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\AddAccountForm.Designer.cs">
-      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    <Compile Include="View\FormThemTaiKhoan.Designer.cs">
+      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdminForm.cs">
       <SubType>Form</SubType>
@@ -174,8 +177,8 @@
     <Compile Include="ThuongHieu.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\AddAccountForm.resx">
-      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
+      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>

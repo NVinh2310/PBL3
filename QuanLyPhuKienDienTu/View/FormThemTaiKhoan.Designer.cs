@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhuKienDienTu
 {
-    partial class AddAccountForm
+    partial class FormThemTaiKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxName = new System.Windows.Forms.ComboBox();
+            this.cbbName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.usernameTxb = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.passwordTxb = new System.Windows.Forms.TextBox();
-            this.submitPasTxb = new System.Windows.Forms.TextBox();
+            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.txbSubmitPas = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBoxName
+            // cbbName
             // 
-            this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(180, 33);
-            this.comboBoxName.Name = "comboBoxName";
-            this.comboBoxName.Size = new System.Drawing.Size(265, 28);
-            this.comboBoxName.TabIndex = 0;
+            this.cbbName.Location = new System.Drawing.Point(180, 33);
+            this.cbbName.Name = "cbbName";
+            this.cbbName.Size = new System.Drawing.Size(265, 28);
+            this.cbbName.TabIndex = 0;
             // 
             // label1
             // 
@@ -59,12 +58,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Chọn nhân viên:";
             // 
-            // usernameTxb
+            // txbUsername
             // 
-            this.usernameTxb.Location = new System.Drawing.Point(157, 19);
-            this.usernameTxb.Name = "usernameTxb";
-            this.usernameTxb.Size = new System.Drawing.Size(208, 26);
-            this.usernameTxb.TabIndex = 2;
+            this.txbUsername.Location = new System.Drawing.Point(157, 19);
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.Size = new System.Drawing.Size(208, 26);
+            this.txbUsername.TabIndex = 2;
             // 
             // label2
             // 
@@ -93,30 +92,30 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
-            // passwordTxb
+            // txbPassword
             // 
-            this.passwordTxb.Location = new System.Drawing.Point(157, 70);
-            this.passwordTxb.Name = "passwordTxb";
-            this.passwordTxb.Size = new System.Drawing.Size(208, 26);
-            this.passwordTxb.TabIndex = 6;
-            this.passwordTxb.UseSystemPasswordChar = true;
+            this.txbPassword.Location = new System.Drawing.Point(157, 70);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.Size = new System.Drawing.Size(208, 26);
+            this.txbPassword.TabIndex = 6;
+            this.txbPassword.UseSystemPasswordChar = true;
             // 
-            // submitPasTxb
+            // txbSubmitPas
             // 
-            this.submitPasTxb.Location = new System.Drawing.Point(157, 119);
-            this.submitPasTxb.Name = "submitPasTxb";
-            this.submitPasTxb.Size = new System.Drawing.Size(208, 26);
-            this.submitPasTxb.TabIndex = 7;
-            this.submitPasTxb.UseSystemPasswordChar = true;
+            this.txbSubmitPas.Location = new System.Drawing.Point(157, 119);
+            this.txbSubmitPas.Name = "txbSubmitPas";
+            this.txbSubmitPas.Size = new System.Drawing.Size(208, 26);
+            this.txbSubmitPas.TabIndex = 7;
+            this.txbSubmitPas.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.exitButton);
             this.panel1.Controls.Add(this.submitButton);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.submitPasTxb);
-            this.panel1.Controls.Add(this.usernameTxb);
-            this.panel1.Controls.Add(this.passwordTxb);
+            this.panel1.Controls.Add(this.txbSubmitPas);
+            this.panel1.Controls.Add(this.txbUsername);
+            this.panel1.Controls.Add(this.txbPassword);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(23, 81);
@@ -126,6 +125,7 @@
             // 
             // exitButton
             // 
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.Location = new System.Drawing.Point(390, 175);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 34);
@@ -136,24 +136,26 @@
             // 
             // submitButton
             // 
+            this.submitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitButton.Location = new System.Drawing.Point(286, 175);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(98, 34);
             this.submitButton.TabIndex = 8;
             this.submitButton.Text = "Xác nhận";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // AddAccountForm
+            // FormThemTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 321);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBoxName);
+            this.Controls.Add(this.cbbName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "AddAccountForm";
+            this.Name = "FormThemTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm tài khoản";
             this.panel1.ResumeLayout(false);
@@ -165,14 +167,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxName;
+        private System.Windows.Forms.ComboBox cbbName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox usernameTxb;
+        private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox passwordTxb;
-        private System.Windows.Forms.TextBox submitPasTxb;
+        private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.TextBox txbSubmitPas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button submitButton;

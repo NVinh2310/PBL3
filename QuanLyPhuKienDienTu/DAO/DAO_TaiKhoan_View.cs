@@ -28,19 +28,57 @@ namespace QuanLyPhuKienDienTu.DAO
         {
             List<TaiKhoan_View> accounts = new List<TaiKhoan_View>();
 
-            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-            {
-                foreach (var item in db.TaiKhoans.ToList())
+            //using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            //{
+            //    foreach (var item in db.TaiKhoans.ToList())
+            //    {
+            //        accounts.Add(new TaiKhoan_View()
+            //        {
+            //            MaTaiKhoan = item.MaTaiKhoan,
+            //            TenNhanVien = item.NhanVien.TenNhanVien,
+            //            Username = item.Username,
+            //            TrangThai = (item.NhanVien.TrangThai == 1) ? "Quản lý" : "Nhân viên"
+            //        });
+            //    }
+            //}
+
+            accounts.AddRange(new TaiKhoan_View[] {
+                new TaiKhoan_View()
                 {
-                    accounts.Add(new TaiKhoan_View()
-                    {
-                        MaTaiKhoan = item.MaTaiKhoan,
-                        TenNhanVien = item.NhanVien.TenNhanVien,
-                        Username = item.Username,
-                        TrangThai = (item.NhanVien.TrangThai == 1) ? "Quản lý" : "Nhân viên"
-                    });
+                    MaTaiKhoan = 1, 
+                    TenNhanVien = "Bùi Ngọc Thịnh", 
+                    Username = "ngocthinh303", 
+                    TrangThai = "Nhân viên"
+                },
+                new TaiKhoan_View()
+                {
+                    MaTaiKhoan = 2,
+                    TenNhanVien = "Nguyễn Văn Vĩnh",
+                    Username = "dragonnevadie",
+                    TrangThai = "Quản lý"
+                },
+                new TaiKhoan_View()
+                {
+                    MaTaiKhoan = 3,
+                    TenNhanVien = "Nguyễn Th Bích Phượng",
+                    Username = "phuongngungok",
+                    TrangThai = "Nhân viên"
+                },
+                new TaiKhoan_View()
+                {
+                    MaTaiKhoan = 4,
+                    TenNhanVien = "Karma Sutra",
+                    Username = "karmasutra",
+                    TrangThai = "Nhân viên"
+                },
+                new TaiKhoan_View()
+                {
+                    MaTaiKhoan = 5,
+                    TenNhanVien = "ZZ547QWER",
+                    Username = "asfdcxb",
+                    TrangThai = "Nhân viên"
                 }
-            }
+            });
 
             return accounts;
         }
