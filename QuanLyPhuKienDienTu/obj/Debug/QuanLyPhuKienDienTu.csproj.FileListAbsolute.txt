@@ -38,6 +38,11 @@ C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csp
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.exe
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.pdb
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.ModifyPasswordForm.resources
-C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.AccountForm.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.LoginForm.resources
-C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.AddAccountForm.resources
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.dll
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.xml
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csproj.CopyComplete
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.View.FormTaiKhoan.resources
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormThemTaiKhoan.resources

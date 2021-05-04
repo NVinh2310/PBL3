@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhuKienDienTu.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace QuanLyPhuKienDienTu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountForm());
+            Application.Run(new FormThemTaiKhoan());
         }
     }
 }
