@@ -27,9 +27,24 @@ namespace QuanLyPhuKienDienTu.BLL
             return DAO_TaiKhoan.Instance.GetTaiKhoan();
         }
 
+        public List<TaiKhoan_View> GetTaiKhoanBangTen(string name)
+        {
+            return DAO_TaiKhoan.Instance.GetTaiKhoanBangTen(name);
+        }
+
         public bool ThemTaiKhoan(TaiKhoan taiKhoan)
         {
             return DAO_TaiKhoan.Instance.ThemTaiKhoan(taiKhoan);
+        }
+
+        public bool XoaTaiKhoan(int id)
+        {
+            return DAO_TaiKhoan.Instance.XoaTaiKhoan(id);
+        }
+
+        public bool DangNhap(string username, string password)
+        {
+            return DAO_TaiKhoan.Instance.DangNhap(username, password);
         }
     }
 }

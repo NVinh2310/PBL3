@@ -24,6 +24,34 @@ namespace QuanLyPhuKienDienTu.DAO
 
         private DAO_NhanVien() { }
 
+        public int TrangThaiNhanVien(string username)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    var data = from nhanvien in db.NhanViens
+                               from taikhoan in db.TaiKhoans
+                               where (nhanvien.MaNhanVien == taikhoan.MaNhanVien && 
+                                        taikhoan.Username == username)
+                               select new
+                               {
+                                   State = nhanvien.TrangThai
+                               };
+
+                    foreach (var item in data)
+                    {
+                        return item.State;
+                    }
+                    return -1;
+                }
+                catch (Exception)
+                {
+                    return -1;
+                }
+            }
+        }
+
         public List<NhanVien> GetNhanVienChuaCoTK()
         {
             List<NhanVien> nhanVien = new List<NhanVien>();

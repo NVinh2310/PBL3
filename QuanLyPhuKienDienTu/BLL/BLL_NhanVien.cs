@@ -27,5 +27,10 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_NhanVien.Instance.GetNhanVienChuaCoTK();
         }
+
+        public int TrangThaiNhanVien(string username)
+        {
+            return DAO_NhanVien.Instance.TrangThaiNhanVien(username);
+        }
     }
 }
