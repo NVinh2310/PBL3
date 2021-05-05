@@ -46,7 +46,47 @@ namespace QuanLyPhuKienDienTu.DAO
             }
         }
 
-        
+        public int LayIDTaiKhoan(string username, string password)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    var data = from taikhoan in db.TaiKhoans
+                               where (taikhoan.Username == username && taikhoan.Password == password)
+                               select taikhoan;
+
+                    foreach (var item in data)
+                    {
+                        return item.MaTaiKhoan;
+                    }
+
+                    return -1;
+                }
+                catch (Exception)
+                {
+                    return -1;
+                }
+            }
+        }
+
+        public bool DoiMatKhau(int id, string newPassword)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    TaiKhoan account = db.TaiKhoans.Find(id);
+                    account.Password = newPassword;
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
         public List<TaiKhoan_View> GetTaiKhoan()
         {

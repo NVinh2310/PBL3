@@ -46,5 +46,12 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_TaiKhoan.Instance.DangNhap(username, password);
         }
+
+        public bool DoiMatKhau(string username, string password, string newPassword)
+        {
+            int id = DAO_TaiKhoan.Instance.LayIDTaiKhoan(username, password);
+
+            return DAO_TaiKhoan.Instance.DoiMatKhau(id, newPassword);
+        }
     }
 }

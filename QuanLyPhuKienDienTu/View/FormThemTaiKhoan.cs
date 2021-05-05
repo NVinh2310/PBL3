@@ -39,6 +39,9 @@ namespace QuanLyPhuKienDienTu
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            string username = txbUsername.Text;
+            string password = txbPassword.Text;
+
             //Trường hợp các dữ liệu đầu vào trống 
             if (Process.IsEmpty(cbbName.Text))
             {
@@ -46,8 +49,8 @@ namespace QuanLyPhuKienDienTu
                 return;
             }
 
-            if (Process.IsEmpty(txbUsername.Text) || 
-                Process.IsEmpty(txbPassword.Text) || 
+            if (Process.IsEmpty(username) || 
+                Process.IsEmpty(password) || 
                 Process.IsEmpty(txbSubmitPas.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ các thông tin");
@@ -55,19 +58,20 @@ namespace QuanLyPhuKienDienTu
             }
 
             //Nhập lại mật khẩu không khớp
-            if (!txbPassword.Text.Equals(txbSubmitPas.Text))
+            if (!password.Equals(txbSubmitPas.Text))
             {
                 MessageBox.Show("Nhập lại mật khẩu không chính xác");
                 return;
             }
 
+            //Tên tài khoản đã tồn tại
+
+
             //Lỗi tự nhập combobox bị sai. Cần xử lý Exception
             try
             {
                 int id = ((CBBItem)cbbName.SelectedItem).Value;
-                string username = txbUsername.Text;
-                string password = txbPassword.Text;
-
+                
                 TaiKhoan taiKhoan = new TaiKhoan()
                 {
                     MaNhanVien = id,
@@ -93,13 +97,6 @@ namespace QuanLyPhuKienDienTu
 
         }
 
-        private void ResetData()
-        {
-            cbbName.Text = "";
-            txbUsername.Text = "";
-            txbPassword.Text = "";
-            txbSubmitPas.Text = "";
-        }
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();

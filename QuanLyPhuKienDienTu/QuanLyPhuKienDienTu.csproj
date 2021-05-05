@@ -121,11 +121,11 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ModifyPasswordForm.cs">
+    <Compile Include="View\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ModifyPasswordForm.Designer.cs">
-      <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    <Compile Include="View\FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
@@ -189,8 +189,8 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ModifyPasswordForm.resx">
-      <DependentUpon>ModifyPasswordForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PayForm.resx">
       <DependentUpon>PayForm.cs</DependentUpon>

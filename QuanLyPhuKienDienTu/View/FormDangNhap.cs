@@ -60,14 +60,16 @@ namespace QuanLyPhuKienDienTu
             }
         }
 
+        private void buttonChangePassWord_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void buttonChangePassWord_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

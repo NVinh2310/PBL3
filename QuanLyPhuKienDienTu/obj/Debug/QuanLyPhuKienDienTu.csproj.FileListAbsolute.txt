@@ -37,7 +37,6 @@ C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csp
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csproj.CoreCompileInputs.cache
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.exe
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.pdb
-C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.ModifyPasswordForm.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.dll
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\bin\Debug\EntityFramework.xml
@@ -46,3 +45,4 @@ C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.csp
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.View.FormTaiKhoan.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormThemTaiKhoan.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDangNhap.resources
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDoiMatKhau.resources
