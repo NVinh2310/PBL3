@@ -65,7 +65,11 @@ namespace QuanLyPhuKienDienTu
             }
 
             //Tên tài khoản đã tồn tại
-
+            if (!BLL_TaiKhoan.Instance.TenTaiKhoanHopLe(username))
+            {
+                MessageBox.Show("Tên tài khoản đã tồn tại");
+                return;
+            }
 
             //Lỗi tự nhập combobox bị sai. Cần xử lý Exception
             try

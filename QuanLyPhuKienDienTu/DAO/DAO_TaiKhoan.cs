@@ -46,6 +46,26 @@ namespace QuanLyPhuKienDienTu.DAO
             }
         }
 
+        public bool TenTaiKhoanHopLe(string username)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    int data = db.TaiKhoans.Where(p => p.Username == username).Count();
+                    if (data == 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
         public int LayIDTaiKhoan(string username, string password)
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())

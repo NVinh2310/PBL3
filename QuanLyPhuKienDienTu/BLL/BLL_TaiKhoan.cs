@@ -53,5 +53,10 @@ namespace QuanLyPhuKienDienTu.BLL
 
             return DAO_TaiKhoan.Instance.DoiMatKhau(id, newPassword);
         }
+
+        public bool TenTaiKhoanHopLe(string username)
+        {
+            return DAO_TaiKhoan.Instance.TenTaiKhoanHopLe(username);
+        }
     }
 }
