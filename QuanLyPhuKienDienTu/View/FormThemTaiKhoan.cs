@@ -15,6 +15,8 @@ namespace QuanLyPhuKienDienTu
 {
     public partial class FormThemTaiKhoan : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         public FormThemTaiKhoan()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace QuanLyPhuKienDienTu
 
         private void SetCBB()
         {
-            List<NhanVien> list = BLL_NhanVien.Instance.GetNhanVien();
+            List<NhanVien> list = BLL_NhanVien.Instance.GetNhanVienChuaCoTK();
 
             foreach(NhanVien item in list)
             {
@@ -60,10 +62,35 @@ namespace QuanLyPhuKienDienTu
             }
 
             //Lỗi tự nhập combobox bị sai. Cần xử lý Exception
-            //Thêm tài khoản thành công
+            try
+            {
+                int id = ((CBBItem)cbbName.SelectedItem).Value;
+                string username = txbUsername.Text;
+                string password = txbPassword.Text;
 
+                TaiKhoan taiKhoan = new TaiKhoan()
+                {
+                    MaNhanVien = id,
+                    Username = username,
+                    Password = password
+                };
 
-            //////////////
+                if (BLL_TaiKhoan.Instance.ThemTaiKhoan(taiKhoan))
+                {
+                    MessageBox.Show("Thêm thành công");
+                    del();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Dữ liệu nhân viên muốn thêm bị sai. Vui lòng chọn lại");
+            }
+
         }
 
         private void ResetData()

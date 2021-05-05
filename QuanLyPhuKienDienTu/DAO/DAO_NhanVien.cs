@@ -24,39 +24,27 @@ namespace QuanLyPhuKienDienTu.DAO
 
         private DAO_NhanVien() { }
 
-        public List<NhanVien> GetNhanVien()
+        public List<NhanVien> GetNhanVienChuaCoTK()
         {
-            List<NhanVien> accounts = new List<NhanVien>();
+            List<NhanVien> nhanVien = new List<NhanVien>();
 
-            accounts.AddRange(new NhanVien[] {
-                new NhanVien()
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var data = from nhanvien in db.NhanViens
+                           where !(from taikhoan in db.TaiKhoans select taikhoan.MaNhanVien)
+                           .Contains(nhanvien.MaNhanVien)
+                           select nhanvien;
+                foreach (var item in data)
                 {
-                    MaNhanVien = 1,
-                    TenNhanVien = "Bùi Ngọc Thịnh"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 3,
-                    TenNhanVien = "Nguyễn Văn Vĩnh"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 5,
-                    TenNhanVien = "Nguyễn Thị Bích Phượng"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 7,
-                    TenNhanVien = "Captain America"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 9,
-                    TenNhanVien = "Batman"
+                    nhanVien.Add(new NhanVien()
+                    {
+                        MaNhanVien = item.MaNhanVien,
+                        TenNhanVien = item.TenNhanVien
+                    });
                 }
-            });
+            }
 
-            return accounts;
+            return nhanVien;
         }
     }
 }

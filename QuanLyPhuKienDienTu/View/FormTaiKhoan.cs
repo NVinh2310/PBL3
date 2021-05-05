@@ -1,4 +1,5 @@
 ﻿using QuanLyPhuKienDienTu.BLL;
+using QuanLyPhuKienDienTu.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,8 @@ namespace QuanLyPhuKienDienTu.View
 
         private void LoadTaiKhoan()
         {
-            dataGridView1.DataSource = BLL_TaiKhoan_View.Instance.GetTaiKhoan();
+            dataGridView1.DataSource = BLL_TaiKhoan.Instance.GetTaiKhoan();
+            Process.InvisibleAttributes(dataGridView1, new object[] { "MaTaiKhoan" });
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             FormThemTaiKhoan form = new FormThemTaiKhoan();
             this.Hide();
+            form.del = new FormThemTaiKhoan.MyDel(LoadTaiKhoan);
             form.ShowDialog();
             this.Show();
         }

@@ -23,9 +23,9 @@ namespace QuanLyPhuKienDienTu.BLL
 
         private BLL_NhanVien() { }
 
-        public List<NhanVien> GetNhanVien()
+        public List<NhanVien> GetNhanVienChuaCoTK()
         {
-            return DAO_NhanVien.Instance.GetNhanVien();
+            return DAO_NhanVien.Instance.GetNhanVienChuaCoTK();
         }
     }
 }
