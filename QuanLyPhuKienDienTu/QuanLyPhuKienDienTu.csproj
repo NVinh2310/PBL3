@@ -74,9 +74,18 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
+    <Compile Include="BLL\BLL_ThongTinBan.cs" />
+    <Compile Include="DAO\DAO_ThongTinBan.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\Process.cs" />
     <Compile Include="DTO\TaiKhoan_View.cs" />
+    <Compile Include="DTO\ThongTinBan.cs" />
+    <Compile Include="View\FormHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHoaDonBan.Designer.cs">
+      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormThemTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +186,9 @@
     <Compile Include="ThuongHieu.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormHoaDonBan.resx">
+      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
       <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>

@@ -51,6 +51,8 @@
     <EntitySetMapping Name="SanPhams">
       <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="SoLuongTonKho" ColumnName="SoLuongTonKho" />
+          <ScalarProperty Name="ThoiLuongBaoHanh" ColumnName="ThoiLuongBaoHanh" />
           <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
           <ScalarProperty Name="MaThuongHieu" ColumnName="MaThuongHieu" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
@@ -59,7 +61,6 @@
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
           <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
-          <ScalarProperty Name="ThoiGianBaoHanh" ColumnName="ThoiGianBaoHanh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -96,9 +97,9 @@
     <EntitySetMapping Name="ChiTietHoaDonBans">
       <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.ChiTietHoaDonBan">
         <MappingFragment StoreEntitySet="ChiTietHoaDonBan">
+          <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
           <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
           <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -106,9 +107,9 @@
     <EntitySetMapping Name="ChiTietHoaDonNhaps">
       <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.ChiTietHoaDonNhap">
         <MappingFragment StoreEntitySet="ChiTietHoaDonNhap">
+          <ScalarProperty Name="SoLuongNhap" ColumnName="SoLuongNhap" />
           <ScalarProperty Name="MaHoaDonNhap" ColumnName="MaHoaDonNhap" />
           <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

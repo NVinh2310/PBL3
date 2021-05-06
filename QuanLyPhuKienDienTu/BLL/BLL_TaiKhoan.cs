@@ -22,6 +22,8 @@ namespace QuanLyPhuKienDienTu.BLL
             private set { instance = value; }
         }
 
+        private BLL_TaiKhoan() {}
+
         public List<TaiKhoan_View> GetTaiKhoan()
         {
             return DAO_TaiKhoan.Instance.GetTaiKhoan();

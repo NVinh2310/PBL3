@@ -46,3 +46,4 @@ C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.Vie
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormThemTaiKhoan.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDangNhap.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDoiMatKhau.resources
+C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.View.FormHoaDonBan.resources

@@ -27,9 +27,10 @@ namespace QuanLyPhuKienDienTu
         public string TenSanPham { get; set; }
         public string MauSac { get; set; }
         public string MoTa { get; set; }
-        public Nullable<decimal> GiaBan { get; set; }
-        public Nullable<decimal> GiaNhap { get; set; }
-        public System.DateTime ThoiGianBaoHanh { get; set; }
+        public decimal GiaBan { get; set; }
+        public decimal GiaNhap { get; set; }
+        public int ThoiLuongBaoHanh { get; set; }
+        public int SoLuongTonKho { get; set; }
     
         public virtual Loai Loai { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

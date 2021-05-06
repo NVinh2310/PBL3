@@ -16,8 +16,8 @@ namespace QuanLyPhuKienDienTu
     {
         public int MaHoaDonBan { get; set; }
         public int MaSanPham { get; set; }
-        public Nullable<int> SoLuong { get; set; }
         public string GhiChu { get; set; }
+        public int SoLuongBan { get; set; }
     
         public virtual HoaDonBan HoaDonBan { get; set; }
         public virtual SanPham SanPham { get; set; }

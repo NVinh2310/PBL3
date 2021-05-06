@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyPhuKienDienTuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyPhuKienDienTuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonBan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ChiTietHoaDonBan">
@@ -14,7 +14,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonBan' does not
           </Key>
           <Property Name="MaHoaDonBan" Type="int" Nullable="false" />
           <Property Name="MaSanPham" Type="int" Nullable="false" />
-          <Property Name="SoLuong" Type="int" />
+          <Property Name="SoLuongBan" Type="int" Nullable="false" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -26,7 +26,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           </Key>
           <Property Name="MaHoaDonNhap" Type="int" Nullable="false" />
           <Property Name="MaSanPham" Type="int" Nullable="false" />
-          <Property Name="SoLuong" Type="int" />
+          <Property Name="SoLuongNhap" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="HoaDonBan">
           <Key>
@@ -82,7 +82,8 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           <Property Name="MoTa" Type="nvarchar" MaxLength="300" Nullable="false" />
           <Property Name="GiaBan" Type="decimal" Precision="19" Scale="4" />
           <Property Name="GiaNhap" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="ThoiGianBaoHanh" Type="datetime" Nullable="false" />
+          <Property Name="ThoiLuongBaoHanh" Type="int" Nullable="false" />
+          <Property Name="SoLuongTonKho" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -264,7 +265,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
             <DefiningQuery>SELECT 
     [ChiTietHoaDonBan].[MaHoaDonBan] AS [MaHoaDonBan], 
     [ChiTietHoaDonBan].[MaSanPham] AS [MaSanPham], 
-    [ChiTietHoaDonBan].[SoLuong] AS [SoLuong], 
+    [ChiTietHoaDonBan].[SoLuongBan] AS [SoLuongBan], 
     [ChiTietHoaDonBan].[GhiChu] AS [GhiChu]
     FROM [dbo].[ChiTietHoaDonBan] AS [ChiTietHoaDonBan]</DefiningQuery>
           </EntitySet>
@@ -272,7 +273,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
             <DefiningQuery>SELECT 
     [ChiTietHoaDonNhap].[MaHoaDonNhap] AS [MaHoaDonNhap], 
     [ChiTietHoaDonNhap].[MaSanPham] AS [MaSanPham], 
-    [ChiTietHoaDonNhap].[SoLuong] AS [SoLuong]
+    [ChiTietHoaDonNhap].[SoLuongNhap] AS [SoLuongNhap]
     FROM [dbo].[ChiTietHoaDonNhap] AS [ChiTietHoaDonNhap]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_ChiTietHoaDonBan_MaHoaDonBan" Association="Self.FK_ChiTietHoaDonBan_MaHoaDonBan">
@@ -312,8 +313,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyPhuKienDienTuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -378,11 +378,12 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           <Property Name="MoTa" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="GiaNhap" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="ThoiGianBaoHanh" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_MaLoai" FromRole="SanPham" ToRole="Loai" />
           <NavigationProperty Name="ChiTietHoaDonBans" Relationship="Self.FK_ChiTietHoaDonBan_MaSanPham" FromRole="SanPham" ToRole="ChiTietHoaDonBan" />
           <NavigationProperty Name="ChiTietHoaDonNhaps" Relationship="Self.FK_ChiTietHoaDonNhap_MaSanPham" FromRole="SanPham" ToRole="ChiTietHoaDonNhap" />
           <NavigationProperty Name="ThuongHieu" Relationship="Self.FK_SanPham_MaThuongHieu" FromRole="SanPham" ToRole="ThuongHieu" />
+          <Property Name="ThoiLuongBaoHanh" Type="Int32" Nullable="false" />
+          <Property Name="SoLuongTonKho" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -421,10 +422,10 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           </Key>
           <Property Name="MaHoaDonBan" Type="Int32" Nullable="false" />
           <Property Name="MaSanPham" Type="Int32" Nullable="false" />
-          <Property Name="SoLuong" Type="Int32" />
           <Property Name="GhiChu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HoaDonBan" Relationship="Self.FK_ChiTietHoaDonBan_MaHoaDonBan" FromRole="ChiTietHoaDonBan" ToRole="HoaDonBan" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietHoaDonBan_MaSanPham" FromRole="ChiTietHoaDonBan" ToRole="SanPham" />
+          <Property Name="SoLuongBan" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ChiTietHoaDonNhap">
           <Key>
@@ -433,9 +434,9 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           </Key>
           <Property Name="MaHoaDonNhap" Type="Int32" Nullable="false" />
           <Property Name="MaSanPham" Type="Int32" Nullable="false" />
-          <Property Name="SoLuong" Type="Int32" />
           <NavigationProperty Name="HoaDonNhap" Relationship="Self.FK_ChiTietHoaDonNhap_MaHoaDonNhap" FromRole="ChiTietHoaDonNhap" ToRole="HoaDonNhap" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietHoaDonNhap_MaSanPham" FromRole="ChiTietHoaDonNhap" ToRole="SanPham" />
+          <Property Name="SoLuongNhap" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_ChiTietHoaDonBan_MaHoaDonBan">
           <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="1" />
@@ -691,6 +692,8 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           <EntitySetMapping Name="SanPhams">
             <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="SoLuongTonKho" ColumnName="SoLuongTonKho" />
+                <ScalarProperty Name="ThoiLuongBaoHanh" ColumnName="ThoiLuongBaoHanh" />
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
                 <ScalarProperty Name="MaThuongHieu" ColumnName="MaThuongHieu" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
@@ -699,7 +702,6 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
                 <ScalarProperty Name="GiaNhap" ColumnName="GiaNhap" />
-                <ScalarProperty Name="ThoiGianBaoHanh" ColumnName="ThoiGianBaoHanh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -736,9 +738,9 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           <EntitySetMapping Name="ChiTietHoaDonBans">
             <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.ChiTietHoaDonBan">
               <MappingFragment StoreEntitySet="ChiTietHoaDonBan">
+                <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
                 <ScalarProperty Name="MaHoaDonBan" ColumnName="MaHoaDonBan" />
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -746,9 +748,9 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
           <EntitySetMapping Name="ChiTietHoaDonNhaps">
             <EntityTypeMapping TypeName="QuanLyPhuKienDienTuModel.ChiTietHoaDonNhap">
               <MappingFragment StoreEntitySet="ChiTietHoaDonNhap">
+                <ScalarProperty Name="SoLuongNhap" ColumnName="SoLuongNhap" />
                 <ScalarProperty Name="MaHoaDonNhap" ColumnName="MaHoaDonNhap" />
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
