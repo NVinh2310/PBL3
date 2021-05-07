@@ -8,6 +8,7 @@ namespace QuanLyPhuKienDienTu.DTO
 {
     class CBBItem
     {
+        //aaaa
         public int Value { get; set; }
         public string Text { get; set; }
 

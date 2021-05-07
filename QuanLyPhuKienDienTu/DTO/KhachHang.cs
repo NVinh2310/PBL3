@@ -8,6 +8,7 @@ namespace QuanLyPhuKienDienTu.DTO
 {
     class KhachHang
     {
+        //aaaa
         public int MaKhachHang { get; set; }
         public string TenKhachHang { get; set; }
         public string DiaChi { get; set; }
