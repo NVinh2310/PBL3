@@ -15,4 +15,3 @@ namespace QuanLyPhuKienDienTu.DTO
         
     }// ren 
 } 
-// ren 1
