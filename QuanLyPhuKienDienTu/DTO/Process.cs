@@ -9,6 +9,7 @@ namespace QuanLyPhuKienDienTu.DTO
 {
     public class Process
     {
+        //aaaaaa
         public static bool IsEmpty(string text)
         {
             if (text == "")
