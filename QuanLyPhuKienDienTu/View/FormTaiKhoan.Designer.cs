@@ -32,6 +32,10 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.showBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +75,7 @@
             this.deleteBtn.TabIndex = 2;
             this.deleteBtn.Text = "-";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // exitBtn
             // 
@@ -83,11 +88,55 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(293, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tìm nhân viên";
+            // 
+            // txbSearch
+            // 
+            this.txbSearch.Location = new System.Drawing.Point(405, 38);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(170, 26);
+            this.txbSearch.TabIndex = 5;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.ForeColor = System.Drawing.Color.Black;
+            this.searchBtn.Location = new System.Drawing.Point(581, 36);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(60, 31);
+            this.searchBtn.TabIndex = 6;
+            this.searchBtn.Text = "Tìm";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // showBtn
+            // 
+            this.showBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showBtn.ForeColor = System.Drawing.Color.Black;
+            this.showBtn.Location = new System.Drawing.Point(42, 469);
+            this.showBtn.Name = "showBtn";
+            this.showBtn.Size = new System.Drawing.Size(100, 31);
+            this.showBtn.TabIndex = 7;
+            this.showBtn.Text = "Tất cả";
+            this.showBtn.UseVisualStyleBackColor = true;
+            this.showBtn.Click += new System.EventHandler(this.showBtn_Click);
+            // 
             // FormTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 521);
+            this.Controls.Add(this.showBtn);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.txbSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addBtn);
@@ -98,6 +147,7 @@
             this.Text = "FormTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,5 +157,9 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbSearch;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Button showBtn;
     }
 }

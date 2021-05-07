@@ -9,7 +9,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonBan' does not
     </Key>
     <Property Name="MaHoaDonBan" Type="int" Nullable="false" />
     <Property Name="MaSanPham" Type="int" Nullable="false" />
-    <Property Name="SoLuong" Type="int" />
+    <Property Name="SoLuongBan" Type="int" Nullable="false" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="300" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -21,7 +21,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
     </Key>
     <Property Name="MaHoaDonNhap" Type="int" Nullable="false" />
     <Property Name="MaSanPham" Type="int" Nullable="false" />
-    <Property Name="SoLuong" Type="int" />
+    <Property Name="SoLuongNhap" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="HoaDonBan">
     <Key>
@@ -77,7 +77,8 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
     <Property Name="MoTa" Type="nvarchar" MaxLength="300" Nullable="false" />
     <Property Name="GiaBan" Type="decimal" Precision="19" Scale="4" />
     <Property Name="GiaNhap" Type="decimal" Precision="19" Scale="4" />
-    <Property Name="ThoiGianBaoHanh" Type="datetime" Nullable="false" />
+    <Property Name="ThoiLuongBaoHanh" Type="int" Nullable="false" />
+    <Property Name="SoLuongTonKho" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -259,7 +260,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
       <DefiningQuery>SELECT 
     [ChiTietHoaDonBan].[MaHoaDonBan] AS [MaHoaDonBan], 
     [ChiTietHoaDonBan].[MaSanPham] AS [MaSanPham], 
-    [ChiTietHoaDonBan].[SoLuong] AS [SoLuong], 
+    [ChiTietHoaDonBan].[SoLuongBan] AS [SoLuongBan], 
     [ChiTietHoaDonBan].[GhiChu] AS [GhiChu]
     FROM [dbo].[ChiTietHoaDonBan] AS [ChiTietHoaDonBan]</DefiningQuery>
     </EntitySet>
@@ -267,7 +268,7 @@ warning 6002: The table/view 'QuanLyPhuKienDienTu.dbo.ChiTietHoaDonNhap' does no
       <DefiningQuery>SELECT 
     [ChiTietHoaDonNhap].[MaHoaDonNhap] AS [MaHoaDonNhap], 
     [ChiTietHoaDonNhap].[MaSanPham] AS [MaSanPham], 
-    [ChiTietHoaDonNhap].[SoLuong] AS [SoLuong]
+    [ChiTietHoaDonNhap].[SoLuongNhap] AS [SoLuongNhap]
     FROM [dbo].[ChiTietHoaDonNhap] AS [ChiTietHoaDonNhap]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_ChiTietHoaDonBan_MaHoaDonBan" Association="Self.FK_ChiTietHoaDonBan_MaHoaDonBan">

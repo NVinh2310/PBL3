@@ -16,7 +16,7 @@ namespace QuanLyPhuKienDienTu
     {
         public int MaHoaDonNhap { get; set; }
         public int MaSanPham { get; set; }
-        public Nullable<int> SoLuong { get; set; }
+        public int SoLuongNhap { get; set; }
     
         public virtual HoaDonNhap HoaDonNhap { get; set; }
         public virtual SanPham SanPham { get; set; }

@@ -8,23 +8,25 @@ using System.Threading.Tasks;
 
 namespace QuanLyPhuKienDienTu.BLL
 {
-    class BLL_TaiKhoan_View
+    class BLL_ThongTinBan
     {
-        private static BLL_TaiKhoan_View instance;
-        public static BLL_TaiKhoan_View Instance
+        private static BLL_ThongTinBan instance;
+        public static BLL_ThongTinBan Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new BLL_TaiKhoan_View();
-                return BLL_TaiKhoan_View.instance;
+                    instance = new BLL_ThongTinBan();
+                return BLL_ThongTinBan.instance;
             }
             private set { instance = value; }
         }
 
-        public List<TaiKhoan_View> GetTaiKhoan()
+        private BLL_ThongTinBan() { }
+
+        public List<ThongTinBan> HoaDonBan()
         {
-            return DAO_TaiKhoan_View.Instance.GetTaiKhoan();
+            return DAO_ThongTinBan.Instance.HoaDonBan();
         }
     }
 }

@@ -61,11 +61,12 @@
     <Property Name="MoTa" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GiaBan" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="GiaNhap" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ThoiGianBaoHanh" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Loai" Relationship="Self.FK_SanPham_MaLoai" FromRole="SanPham" ToRole="Loai" />
     <NavigationProperty Name="ChiTietHoaDonBans" Relationship="Self.FK_ChiTietHoaDonBan_MaSanPham" FromRole="SanPham" ToRole="ChiTietHoaDonBan" />
     <NavigationProperty Name="ChiTietHoaDonNhaps" Relationship="Self.FK_ChiTietHoaDonNhap_MaSanPham" FromRole="SanPham" ToRole="ChiTietHoaDonNhap" />
     <NavigationProperty Name="ThuongHieu" Relationship="Self.FK_SanPham_MaThuongHieu" FromRole="SanPham" ToRole="ThuongHieu" />
+    <Property Name="ThoiLuongBaoHanh" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongTonKho" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -104,10 +105,10 @@
     </Key>
     <Property Name="MaHoaDonBan" Type="Int32" Nullable="false" />
     <Property Name="MaSanPham" Type="Int32" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" />
     <Property Name="GhiChu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="HoaDonBan" Relationship="Self.FK_ChiTietHoaDonBan_MaHoaDonBan" FromRole="ChiTietHoaDonBan" ToRole="HoaDonBan" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietHoaDonBan_MaSanPham" FromRole="ChiTietHoaDonBan" ToRole="SanPham" />
+    <Property Name="SoLuongBan" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="ChiTietHoaDonNhap">
     <Key>
@@ -116,9 +117,9 @@
     </Key>
     <Property Name="MaHoaDonNhap" Type="Int32" Nullable="false" />
     <Property Name="MaSanPham" Type="Int32" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" />
     <NavigationProperty Name="HoaDonNhap" Relationship="Self.FK_ChiTietHoaDonNhap_MaHoaDonNhap" FromRole="ChiTietHoaDonNhap" ToRole="HoaDonNhap" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_ChiTietHoaDonNhap_MaSanPham" FromRole="ChiTietHoaDonNhap" ToRole="SanPham" />
+    <Property Name="SoLuongNhap" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK_ChiTietHoaDonBan_MaHoaDonBan">
     <End Role="HoaDonBan" Type="Self.HoaDonBan" Multiplicity="1" />

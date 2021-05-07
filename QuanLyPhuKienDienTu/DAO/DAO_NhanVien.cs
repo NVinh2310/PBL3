@@ -24,39 +24,55 @@ namespace QuanLyPhuKienDienTu.DAO
 
         private DAO_NhanVien() { }
 
-        public List<NhanVien> GetNhanVien()
+        public int TrangThaiNhanVien(string username)
         {
-            List<NhanVien> accounts = new List<NhanVien>();
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    var data = from nhanvien in db.NhanViens
+                               from taikhoan in db.TaiKhoans
+                               where (nhanvien.MaNhanVien == taikhoan.MaNhanVien && 
+                                        taikhoan.Username == username)
+                               select new
+                               {
+                                   State = nhanvien.TrangThai
+                               };
 
-            accounts.AddRange(new NhanVien[] {
-                new NhanVien()
-                {
-                    MaNhanVien = 1,
-                    TenNhanVien = "Bùi Ngọc Thịnh"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 3,
-                    TenNhanVien = "Nguyễn Văn Vĩnh"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 5,
-                    TenNhanVien = "Nguyễn Thị Bích Phượng"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 7,
-                    TenNhanVien = "Captain America"
-                },
-                new NhanVien()
-                {
-                    MaNhanVien = 9,
-                    TenNhanVien = "Batman"
+                    foreach (var item in data)
+                    {
+                        return item.State;
+                    }
+                    return -1;
                 }
-            });
+                catch (Exception)
+                {
+                    return -1;
+                }
+            }
+        }
 
-            return accounts;
+        public List<NhanVien> GetNhanVienChuaCoTK()
+        {
+            List<NhanVien> nhanVien = new List<NhanVien>();
+
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var data = from nhanvien in db.NhanViens
+                           where !(from taikhoan in db.TaiKhoans select taikhoan.MaNhanVien)
+                           .Contains(nhanvien.MaNhanVien)
+                           select nhanvien;
+                foreach (var item in data)
+                {
+                    nhanVien.Add(new NhanVien()
+                    {
+                        MaNhanVien = item.MaNhanVien,
+                        TenNhanVien = item.TenNhanVien
+                    });
+                }
+            }
+
+            return nhanVien;
         }
     }
 }

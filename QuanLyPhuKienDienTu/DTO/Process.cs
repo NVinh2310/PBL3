@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyPhuKienDienTu.DTO
 {
@@ -13,6 +14,14 @@ namespace QuanLyPhuKienDienTu.DTO
             if (text == "")
                 return true;
             return false;
+        }
+
+        public static void InvisibleAttributes(DataGridView dataView, object[] parameters = null)
+        {
+            foreach (string item in parameters)
+            {
+                dataView.Columns[item].Visible = false;
+            }
         }
     }
 }

@@ -23,9 +23,14 @@ namespace QuanLyPhuKienDienTu.BLL
 
         private BLL_NhanVien() { }
 
-        public List<NhanVien> GetNhanVien()
+        public List<NhanVien> GetNhanVienChuaCoTK()
         {
-            return DAO_NhanVien.Instance.GetNhanVien();
+            return DAO_NhanVien.Instance.GetNhanVienChuaCoTK();
+        }
+
+        public int TrangThaiNhanVien(string username)
+        {
+            return DAO_NhanVien.Instance.TrangThaiNhanVien(username);
         }
     }
 }
