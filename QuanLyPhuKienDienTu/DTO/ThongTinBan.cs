@@ -8,6 +8,7 @@ namespace QuanLyPhuKienDienTu.DTO
 {
     class ThongTinBan
     {
+        //sssssssssssssssssssssssssssss
         public int MaHoaDonBan { get; set; }
         public string TenKhachHang { get; set; }
         public DateTime NgayBan { get; set; }
