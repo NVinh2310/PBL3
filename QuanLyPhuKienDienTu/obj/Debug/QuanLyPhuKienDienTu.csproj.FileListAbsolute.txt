@@ -71,3 +71,7 @@ C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.For
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDoiMatKhau.resources
 C:\Users\OS\Documents\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.View.FormHoaDonBan.resources
 >>>>>>> edaf90dddcb700f4a3e4177011af5fc19da2fa39
+C:\Users\Acer\Desktop\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.View.FormHoaDonBan.resources
+C:\Users\Acer\Desktop\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormThemTaiKhoan.resources
+C:\Users\Acer\Desktop\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDoiMatKhau.resources
+C:\Users\Acer\Desktop\PBL3\QuanLyPhuKienDienTu\obj\Debug\QuanLyPhuKienDienTu.FormDangNhap.resources
