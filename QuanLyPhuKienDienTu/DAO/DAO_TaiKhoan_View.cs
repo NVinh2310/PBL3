@@ -60,7 +60,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 new TaiKhoan_View()
                 {
                     MaTaiKhoan = 3,
-                    TenNhanVien = "Nguyễn Th Bích Phượng",
+                    TenNhanVien = "Nguyễn Thị Bích Phượng",
                     Username = "phuongngungok",
                     TrangThai = "Nhân viên"
                 },
