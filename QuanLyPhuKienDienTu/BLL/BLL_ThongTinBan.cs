@@ -29,18 +29,65 @@ namespace QuanLyPhuKienDienTu.BLL
             return DAO_ThongTinBan.Instance.HoaDonBan();
         }
 
-        public List<ThongTinBan> TimTheoNgay(List<ThongTinBan> data, DateTime datetime)
+        public List<ThongTinBan> TimTheoNgay(DateTime datetime)
         {
             List<ThongTinBan> result = new List<ThongTinBan>();
             string formatDate = datetime.ToString("dd-MM-yyyy");
 
-            foreach (ThongTinBan item in data)
+            foreach (ThongTinBan item in HoaDonBan())
             {
-                if (Process.FormatDate(item.NgayBan).Equals(formatDate))
+                if ((item.NgayBan.DayOfYear == datetime.DayOfYear) && 
+                    (item.NgayBan.Year == datetime.Year))
                 {
                     result.Add(item);
                 }
             }
+            return result;
+        }
+
+        public List<ThongTinBan> TimTheoThang(DateTime dateTime)
+        {
+            List<ThongTinBan> result = new List<ThongTinBan>();
+
+            foreach(ThongTinBan item in HoaDonBan())
+            {
+                if (item.NgayBan.Month == dateTime.Month && 
+                    (item.NgayBan.Year == dateTime.Year))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        public List<ThongTinBan> TimTheoNam(DateTime dateTime)
+        {
+            List<ThongTinBan> result = new List<ThongTinBan>();
+
+            foreach (ThongTinBan item in HoaDonBan())
+            {
+                if (item.NgayBan.Year == dateTime.Year)
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        public List<ThongTinBan> TimTheoTen(string name)
+        {
+            List<ThongTinBan> result = new List<ThongTinBan>();
+
+            foreach(ThongTinBan item in HoaDonBan())
+            {
+                if (item.TenKhachHang.Contains(name))
+                {
+                    result.Add(item);
+                }
+            }
+
             return result;
         }
     }
