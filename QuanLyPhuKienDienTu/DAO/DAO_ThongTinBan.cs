@@ -1,6 +1,7 @@
 ﻿using QuanLyPhuKienDienTu.DTO;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,7 +60,7 @@ namespace QuanLyPhuKienDienTu.DAO
                         TenKhachHang = item.TenKhach,
                         NgayBan = item.Ngay,
                         TongSoLuong = item.TongSoLuong,
-                        TongGiaBan = item.TongTien
+                        TongGiaBan = Math.Round(item.TongTien)
                     });
                 }
             }

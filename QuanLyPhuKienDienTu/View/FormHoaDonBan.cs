@@ -1,4 +1,5 @@
 ﻿using QuanLyPhuKienDienTu.BLL;
+using QuanLyPhuKienDienTu.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,12 +22,34 @@ namespace QuanLyPhuKienDienTu.View
 
         private void LoadDaTa()
         {
-            dataGridView1.DataSource = BLL_ThongTinBan.Instance.HoaDonBan();
+            dataGridView.DataSource = BLL_ThongTinBan.Instance.HoaDonBan();
+            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            LoadDaTa();
+        }
+
+        private void btnSearchDate_Click(object sender, EventArgs e)
+        {
+            DateTime dateTime = dateTimePicker1.Value;
+
+            List<ThongTinBan> data = new List<ThongTinBan>();
+
+            foreach (DataGridViewRow item in dataGridView.Rows)
+            {
+                ThongTinBan info = item.DataBoundItem as ThongTinBan;
+                data.Add(info);
+            }
+
+            dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoNgay(data, dateTime);
+            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } 
     }
 }

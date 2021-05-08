@@ -9,7 +9,6 @@ namespace QuanLyPhuKienDienTu.DTO
 {
     public class Process
     {
-        //aaaaaa
         public static bool IsEmpty(string text)
         {
             if (text == "")
@@ -23,6 +22,11 @@ namespace QuanLyPhuKienDienTu.DTO
             {
                 dataView.Columns[item].Visible = false;
             }
+        }
+
+        public static string FormatDate(DateTime dateTime)
+        {
+            return dateTime.ToString("dd-MM-yyyy");
         }
     }
 }

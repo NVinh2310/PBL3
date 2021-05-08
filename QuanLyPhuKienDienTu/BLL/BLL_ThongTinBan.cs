@@ -28,5 +28,20 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_ThongTinBan.Instance.HoaDonBan();
         }
+
+        public List<ThongTinBan> TimTheoNgay(List<ThongTinBan> data, DateTime datetime)
+        {
+            List<ThongTinBan> result = new List<ThongTinBan>();
+            string formatDate = datetime.ToString("dd-MM-yyyy");
+
+            foreach (ThongTinBan item in data)
+            {
+                if (Process.FormatDate(item.NgayBan).Equals(formatDate))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
     }
 }
