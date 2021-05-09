@@ -23,9 +23,9 @@ namespace QuanLyPhuKienDienTu.BLL
 
         private BLL_SanPham() { }
 
-        public List<SanPham> GetKhachHang()
+        public List<SanPham> GetSanPham()
         {
-            return BLL_SanPham.Instance.GetKhachHang();
+            return BLL_SanPham.Instance.GetSanPham();
         }
     }
 }

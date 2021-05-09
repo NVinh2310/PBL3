@@ -27,5 +27,21 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_KhachHang.Instance.GetKhachHang();
         }
+        public List<KhachHang> GetListKH(int makh, string name)
+        {
+            return DAO_KhachHang.Instance.GetListKH(makh, name);
+        }
+        public bool ThemKhachHang(KhachHang customer)
+        {
+            return DAO_KhachHang.Instance.ThemKhachHang(customer);
+        }
+        public bool SuaKhachHang (int makh)
+        {
+            return DAO_KhachHang.Instance.SuaKhachHang(makh);
+        }
+        public bool XoaKhachHang (int makh)
+        {
+            return DAO_KhachHang.Instance.XoaKhachHang(makh);
+        }
     }
 }
