@@ -13,5 +13,5 @@ namespace QuanLyPhuKienDienTu.DTO
         public string Username { get; set; }
         public string TrangThai { get; set; }
         
-    }// ren 
+    }
 } 
