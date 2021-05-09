@@ -90,5 +90,66 @@ namespace QuanLyPhuKienDienTu.BLL
 
             return result;
         }
+
+        
+        public List<ChiTietBan> ThongTinSanPham(int id)
+        {
+            return DAO_ThongTinBan.Instance.ThongTinSanPham(id);
+        }
+
+        
+        public KhachHang ThongTinKhachHang(int id)
+        {
+            return DAO_ThongTinBan.Instance.ThongTinKhachHang(id);
+        }
+
+        public List<ThongTinBan> SapXepTheoTen(List<ThongTinBan> data)
+        {
+            List<ThongTinBan> result = data;
+
+            result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
+            {
+                return (tt1.TenKhachHang.CompareTo(tt2.TenKhachHang));
+            });
+
+            return result;
+        }
+
+        public List<ThongTinBan> SapXepTheoNgay(List<ThongTinBan> data)
+        {
+            List<ThongTinBan> result = data;
+
+            result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
+            {
+                return (tt1.NgayBan.CompareTo(tt2.NgayBan));
+            });
+
+            return result;
+        }
+
+        public List<ThongTinBan> SapXepTheoSoLuong(List<ThongTinBan> data)
+        {
+            List<ThongTinBan> result = data;
+
+            result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
+            {
+                return (tt1.TongSoLuong.CompareTo(tt2.TongSoLuong));
+            });
+
+            return result;
+        }
+
+        public List<ThongTinBan> SapXepTheoGiaBan(List<ThongTinBan> data)
+        {
+            List<ThongTinBan> result = data;
+
+            result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
+            {
+                return (tt1.TongGiaBan.CompareTo(tt2.TongGiaBan));
+            });
+
+            return result;
+        }
     }
+
 }

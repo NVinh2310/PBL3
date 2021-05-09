@@ -66,5 +66,66 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             return data;
         }
+
+        //Lấy thông tin khách hàng bằng mã hóa đơn bán
+        public KhachHang ThongTinKhachHang(int id)
+        {
+            KhachHang khachHang = new KhachHang();
+
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var query = from hoadon in db.HoaDonBans
+                            join khachhang in db.KhachHangs on hoadon.MaKhachHang equals khachhang.MaKhachHang
+                            where hoadon.MaHoaDonBan == id
+                            select new { 
+                                TenKhachHang = khachhang.TenKhachHang,
+                                DiaChi = khachhang.DiaChi,
+                                SoDienThoai = khachhang.SoDienThoai
+                            };
+                foreach (var item in query)
+                {
+                    khachHang.TenKhachHang = item.TenKhachHang;
+                    khachHang.DiaChi = item.DiaChi;
+                    khachHang.SoDienThoai = item.SoDienThoai;
+                }
+            }
+
+            return khachHang;
+        }
+
+        //Lấy thông tin sản phẩm bằng mã hóa đơn bán
+        public List<ChiTietBan> ThongTinSanPham(int id)
+        {
+            List<ChiTietBan> listSanPham = new List<ChiTietBan>();
+
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var query = from cthd in db.ChiTietHoaDonBans
+                            join sp in db.SanPhams on cthd.MaSanPham equals sp.MaSanPham
+                            where cthd.MaHoaDonBan == id
+                            select new
+                            {
+                                MaSanPham = sp.MaSanPham,
+                                TenSanPham = sp.TenSanPham,
+                                MauSac = sp.MauSac,
+                                SoLuongBan = cthd.SoLuongBan,
+                                GiaBan = sp.GiaBan
+                            };
+                foreach (var item in query)
+                {
+                    ChiTietBan chiTiet = new ChiTietBan()
+                    {
+                        MaSanPham = item.MaSanPham,
+                        TenSanPham = item.TenSanPham,
+                        MauSac = item.MauSac,
+                        SoLuongBan = item.SoLuongBan,
+                        GiaBan = Math.Round(item.GiaBan)
+                    };
+                    listSanPham.Add(chiTiet);
+                }
+            }
+
+            return listSanPham;
+        }
     }
 }

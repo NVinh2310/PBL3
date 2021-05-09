@@ -40,6 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbDate = new System.Windows.Forms.ComboBox();
+            this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +60,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(788, 393);
             this.dataGridView.TabIndex = 1;
-            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
+            this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
             // 
             // label1
             // 
@@ -99,7 +102,7 @@
             this.btnSearchDate.AccessibleDescription = "";
             this.btnSearchDate.AccessibleName = "";
             this.btnSearchDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchDate.Location = new System.Drawing.Point(362, 85);
+            this.btnSearchDate.Location = new System.Drawing.Point(362, 91);
             this.btnSearchDate.Name = "btnSearchDate";
             this.btnSearchDate.Size = new System.Drawing.Size(63, 26);
             this.btnSearchDate.TabIndex = 6;
@@ -152,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 88);
+            this.label4.Location = new System.Drawing.Point(84, 91);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 20);
@@ -162,16 +165,50 @@
             // cbbDate
             // 
             this.cbbDate.FormattingEnabled = true;
-            this.cbbDate.Location = new System.Drawing.Point(194, 85);
+            this.cbbDate.Location = new System.Drawing.Point(194, 88);
             this.cbbDate.Name = "cbbDate";
             this.cbbDate.Size = new System.Drawing.Size(145, 28);
             this.cbbDate.TabIndex = 12;
+            // 
+            // cbbSort
+            // 
+            this.cbbSort.FormattingEnabled = true;
+            this.cbbSort.Location = new System.Drawing.Point(622, 88);
+            this.cbbSort.Name = "cbbSort";
+            this.cbbSort.Size = new System.Drawing.Size(172, 28);
+            this.cbbSort.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(492, 91);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Sắp xếp theo:";
+            // 
+            // btnSort
+            // 
+            this.btnSort.AccessibleDescription = "";
+            this.btnSort.AccessibleName = "";
+            this.btnSort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSort.Location = new System.Drawing.Point(800, 90);
+            this.btnSort.Name = "btnSort";
+            this.btnSort.Size = new System.Drawing.Size(76, 27);
+            this.btnSort.TabIndex = 13;
+            this.btnSort.Text = "Sắp xếp";
+            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // FormHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 637);
+            this.ClientSize = new System.Drawing.Size(961, 620);
+            this.Controls.Add(this.cbbSort);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnSort);
             this.Controls.Add(this.cbbDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,6 +224,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormHoaDonBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHoaDonBan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -208,5 +246,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbDate;
+        private System.Windows.Forms.ComboBox cbbSort;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnSort;
     }
 }

@@ -18,7 +18,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             InitializeComponent();
             LoadDaTa();
-            SetCBBLoaiTimKiem();
+            SetCBB();
         }
 
         private void LoadDaTa()
@@ -27,10 +27,13 @@ namespace QuanLyPhuKienDienTu.View
             Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
         }
 
-        private void SetCBBLoaiTimKiem()
+        private void SetCBB()
         {
             cbbDate.Items.AddRange(new string[] { "Ngày", "Tháng", "Năm" });
             cbbDate.SelectedIndex = 0;
+
+            cbbSort.Items.AddRange(new string[] { "Tên", "Ngày", "Số lượng", "Giá bán" });
+            cbbSort.SelectedIndex = 0;
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -73,15 +76,49 @@ namespace QuanLyPhuKienDienTu.View
             dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoTen(name);
             Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
         }
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            List<ThongTinBan> list = new List<ThongTinBan>();
+            foreach(DataGridViewRow row in dataGridView.Rows)
+            {
+                ThongTinBan info = row.DataBoundItem as ThongTinBan;
+                list.Add(info);
+            }
+
+            string type = cbbSort.Text;
+            switch (type)
+            {
+                case "Tên":
+                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoTen(list);
+                    break;
+                case "Ngày":
+                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoNgay(list);
+                    break;
+                case "Số lượng":
+                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoSoLuong(list);
+                    break;
+                case "Giá bán":
+                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoGiaBan(list);
+                    break;
+                default:
+                    MessageBox.Show("Không hợp lệ");
+                    break;
+            }
+        }
+
+        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonBan"].Value;
+
+            FormChiTietBan form = new FormChiTietBan(idHoaDon);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
