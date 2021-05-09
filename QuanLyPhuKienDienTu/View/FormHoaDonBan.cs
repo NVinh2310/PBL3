@@ -108,12 +108,12 @@ namespace QuanLyPhuKienDienTu.View
 
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonBan"].Value;
+            //int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonBan"].Value;
 
-            FormChiTietBan form = new FormChiTietBan(idHoaDon);
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            //FormChiTietBan form = new FormChiTietBan(idHoaDon);
+            //this.Hide();
+            //form.ShowDialog();
+            //this.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

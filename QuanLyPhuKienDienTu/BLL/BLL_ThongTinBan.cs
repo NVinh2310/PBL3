@@ -92,10 +92,10 @@ namespace QuanLyPhuKienDienTu.BLL
         }
 
         
-        public List<ChiTietBan> ThongTinSanPham(int id)
-        {
-            return DAO_ThongTinBan.Instance.ThongTinSanPham(id);
-        }
+        //public List<ChiTietBan> ThongTinSanPham(int id)
+        //{
+        //    return DAO_ThongTinBan.Instance.ThongTinSanPham(id);
+        //}
 
         
         public KhachHang ThongTinKhachHang(int id)
