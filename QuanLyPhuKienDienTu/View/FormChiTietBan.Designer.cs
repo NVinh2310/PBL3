@@ -31,23 +31,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbAddress = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.lvDetail = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.exitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 38);
+            this.label1.Location = new System.Drawing.Point(90, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 0;
@@ -56,75 +56,63 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(226, 38);
+            this.lbName.Location = new System.Drawing.Point(263, 32);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(127, 20);
+            this.lbName.Size = new System.Drawing.Size(51, 20);
             this.lbName.TabIndex = 1;
-            this.lbName.Text = "Đây là tên khách";
+            this.lbName.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 78);
+            this.label3.Location = new System.Drawing.Point(90, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Địa chỉ:";
+            this.label3.Text = "Số điện thoại";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(90, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Địa chỉ:";
             // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(226, 78);
+            this.lbAddress.Location = new System.Drawing.Point(263, 72);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(102, 20);
-            this.lbAddress.TabIndex = 3;
-            this.lbAddress.Text = "Đây là địa chỉ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Số điện thoại:";
+            this.lbAddress.Size = new System.Drawing.Size(51, 20);
+            this.lbAddress.TabIndex = 4;
+            this.lbAddress.Text = "label5";
             // 
             // lbPhone
             // 
             this.lbPhone.AutoSize = true;
-            this.lbPhone.Location = new System.Drawing.Point(226, 121);
+            this.lbPhone.Location = new System.Drawing.Point(263, 113);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(147, 20);
+            this.lbPhone.Size = new System.Drawing.Size(51, 20);
             this.lbPhone.TabIndex = 5;
-            this.lbPhone.Text = "Đây là số điện thoại";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Location = new System.Drawing.Point(895, 549);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(76, 32);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.lbPhone.Text = "label6";
             // 
             // lvDetail
             // 
-            this.lvDetail.AllowDrop = true;
             this.lvDetail.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader3,
             this.columnHeader2,
-            this.columnHeader4,
             this.columnHeader5,
+            this.columnHeader3,
+            this.columnHeader4,
             this.columnHeader8});
             this.lvDetail.FullRowSelect = true;
             this.lvDetail.GridLines = true;
             this.lvDetail.HideSelection = false;
-            this.lvDetail.Location = new System.Drawing.Point(51, 160);
+            this.lvDetail.Location = new System.Drawing.Point(58, 158);
             this.lvDetail.Name = "lvDetail";
-            this.lvDetail.Size = new System.Drawing.Size(920, 383);
+            this.lvDetail.Size = new System.Drawing.Size(898, 407);
             this.lvDetail.TabIndex = 38;
             this.lvDetail.UseCompatibleStateImageBehavior = false;
             this.lvDetail.View = System.Windows.Forms.View.Details;
@@ -132,43 +120,53 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "STT";
-            this.columnHeader1.Width = 49;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Sản phẩm";
-            this.columnHeader3.Width = 395;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Màu sắc";
-            this.columnHeader2.Width = 133;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Số lượng";
-            this.columnHeader4.Width = 99;
+            this.columnHeader2.Text = "Sản phẩm";
+            this.columnHeader2.Width = 316;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Giá bán";
-            this.columnHeader5.Width = 110;
+            this.columnHeader5.Text = "Màu sắc";
+            this.columnHeader5.Width = 125;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số lượng";
+            this.columnHeader3.Width = 99;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Đơn giá";
+            this.columnHeader4.Width = 122;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Thành tiền";
-            this.columnHeader8.Width = 130;
+            this.columnHeader8.Width = 169;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.Location = new System.Drawing.Point(881, 571);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(75, 36);
+            this.exitBtn.TabIndex = 39;
+            this.exitBtn.Text = "Thoát";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormChiTietBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 605);
+            this.ClientSize = new System.Drawing.Size(1015, 622);
+            this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.lvDetail);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lbPhone);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lbAddress);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.label1);
@@ -187,16 +185,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbAddress;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbPhone;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListView lvDetail;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        internal System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button exitBtn;
     }
 }

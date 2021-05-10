@@ -31,7 +31,7 @@ namespace QuanLyPhuKienDienTu.View
             lbPhone.Text = khachHang.SoDienThoai;
         }
 
-        private void LoadProduct() 
+        private void LoadProduct()
         {
             List<ChiTietBan> sanPham = BLL_ThongTinBan.Instance.ThongTinSanPham(MaHoaDon);
 

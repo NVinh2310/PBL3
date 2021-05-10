@@ -85,11 +85,18 @@
     <Compile Include="DAO\DAO_ThongTinBan.cs" />
     <Compile Include="DAO\DAO_ThuongHieu.cs" />
     <Compile Include="DTO\CBBItem.cs" />
+    <Compile Include="DTO\ChiTietBan.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\Process.cs" />
     <Compile Include="DTO\SanPham_View.cs" />
     <Compile Include="DTO\TaiKhoan_View.cs" />
     <Compile Include="DTO\ThongTinBan.cs" />
+    <Compile Include="View\FormChiTietBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormChiTietBan.Designer.cs">
+      <DependentUpon>FormChiTietBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +203,9 @@
     <Compile Include="ThuongHieu.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormChiTietBan.resx">
+      <DependentUpon>FormChiTietBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormHoaDonBan.resx">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
