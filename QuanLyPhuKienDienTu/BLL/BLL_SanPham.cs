@@ -27,7 +27,7 @@ namespace QuanLyPhuKienDienTu.BLL
         public List<SanPham> GetKhachHang()
         {
             return BLL_SanPham.Instance.GetKhachHang();
-        }
+        }// ni là của con P
         public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu , string gia )
         {
             List<SanPham_View> list = new List<SanPham_View>();
@@ -270,7 +270,8 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             return list;
         }
-
-
+        // t có làm thêm hàm getSanPham_Views
+        // ko push lên ren có hàm ni?
+        
     }
 }
