@@ -24,7 +24,7 @@ namespace QuanLyPhuKienDienTu.DAO
             List<Loai> loai = new List<Loai>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
-                foreach(var i in db.Loais.ToList())
+                foreach (var i in db.Loais.ToList())
                 {
                     loai.Add(new Loai
                     {
@@ -33,6 +33,7 @@ namespace QuanLyPhuKienDienTu.DAO
                     }
                       );
                 }
+
                 return loai.ToList();
             }
         }

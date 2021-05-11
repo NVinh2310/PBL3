@@ -38,7 +38,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 });
                 return list.ToList();
             }
+            
         }
     }
-
 }
