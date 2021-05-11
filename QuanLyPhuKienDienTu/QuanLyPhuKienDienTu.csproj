@@ -76,6 +76,7 @@
     <Compile Include="BLL\BLL_Loai.cs" />
     <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_SanPham.cs" />
+    <Compile Include="BLL\BLL_ThongTinNhap.cs" />
     <Compile Include="BLL\BLL_ThuongHieu.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="DAO\DAO_Loai.cs" />
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="DAO\DAO_ThongTinBan.cs" />
+    <Compile Include="DAO\DAO_ThongTinNhap.cs" />
     <Compile Include="DAO\DAO_ThuongHieu.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\ChiTietBan.cs" />
@@ -91,17 +93,30 @@
     <Compile Include="DTO\SanPham_View.cs" />
     <Compile Include="DTO\TaiKhoan_View.cs" />
     <Compile Include="DTO\ThongTinBan.cs" />
+    <Compile Include="DTO\ThongTinNhap.cs" />
     <Compile Include="View\FormChiTietBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormChiTietBan.Designer.cs">
       <DependentUpon>FormChiTietBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormChiTietNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormChiTietNhap.Designer.cs">
+      <DependentUpon>FormChiTietNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormHoaDonBan.Designer.cs">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormHoaDonNhap.Designer.cs">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormThemTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -206,8 +221,14 @@
     <EmbeddedResource Include="View\FormChiTietBan.resx">
       <DependentUpon>FormChiTietBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FormChiTietNhap.resx">
+      <DependentUpon>FormChiTietNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormHoaDonBan.resx">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormHoaDonNhap.resx">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
       <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
