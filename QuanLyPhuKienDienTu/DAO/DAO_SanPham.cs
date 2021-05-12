@@ -20,7 +20,6 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             private set { instance = value; }
         }
-<<<<<<< HEAD
         private DAO_SanPham()
         {
 
@@ -213,7 +212,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 }
                 return true;
             }
-=======
+        }
         public List<SanPham_View> GetSanPhamView()
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
@@ -232,8 +231,6 @@ namespace QuanLyPhuKienDienTu.DAO
                 });
                 return list.ToList();
             }
-            
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
         }
     }
 }

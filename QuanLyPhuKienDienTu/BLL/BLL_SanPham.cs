@@ -26,7 +26,6 @@ namespace QuanLyPhuKienDienTu.BLL
 
         public List<SanPham> GetSanPham()
         {
-<<<<<<< HEAD
             return DAO_SanPham.Instance.GetSanPham();
         }
         public List<SanPham> GetListSP(int masp, string namesp)
@@ -56,8 +55,6 @@ namespace QuanLyPhuKienDienTu.BLL
         public bool XoaSanPham(int masp)
         {
             return DAO_SanPham.Instance.XoaSanPham(masp);
-=======
-            return BLL_SanPham.Instance.GetKhachHang();
         }// ni là của con P
         public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu , string gia )
         {
@@ -300,7 +297,6 @@ namespace QuanLyPhuKienDienTu.BLL
                 }
             }
             return list;
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
         }
         // t có làm thêm hàm getSanPham_Views
         // ko push lên ren có hàm ni?

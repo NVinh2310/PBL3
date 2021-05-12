@@ -81,10 +81,7 @@
     <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
     <Compile Include="BLL\BLL_ThongTinBan.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="DAO\DAO_Loai.cs" />
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="DAO\DAO_ThongTinBan.cs" />
     <Compile Include="DAO\DAO_ThongTinNhap.cs" />
@@ -115,7 +112,6 @@
     <Compile Include="View\FormHoaDonBan.Designer.cs">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="View\FormSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,15 +121,14 @@
     <Compile Include="View\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormKhachHang.Designer.cs">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
-=======
+	  <Compile Include="View\FormKhachHang.Designer.cs">
+		  <DependentUpon>FormKhachHang.cs</DependentUpon>
+	  </Compile>
     <Compile Include="View\FormHoaDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormHoaDonNhap.Designer.cs">
       <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
     </Compile>
     <Compile Include="View\FormThemTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -244,16 +239,14 @@
     <EmbeddedResource Include="View\FormHoaDonBan.resx">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="View\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
-=======
+	</EmbeddedResource>
     <EmbeddedResource Include="View\FormHoaDonNhap.resx">
       <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
       <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
