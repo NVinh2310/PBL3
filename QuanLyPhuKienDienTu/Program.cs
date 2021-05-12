@@ -17,7 +17,11 @@ namespace QuanLyPhuKienDienTu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FormSanPham());
+=======
+            Application.Run(new FormHoaDonNhap());
+>>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
         }
     }
 }

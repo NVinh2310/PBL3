@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyPhuKienDienTu.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             private set { instance = value; }
         }
+<<<<<<< HEAD
         private DAO_SanPham()
         {
 
@@ -211,6 +213,27 @@ namespace QuanLyPhuKienDienTu.DAO
                 }
                 return true;
             }
+=======
+        public List<SanPham_View> GetSanPhamView()
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var list = (from i in db.SanPhams select new SanPham_View 
+                { 
+                    MaSanPham =i.MaSanPham,
+                    TenSanPham = i.TenSanPham,
+                    TenLoai=i.Loai.TenLoai, 
+                    TenThuongHieu =i.ThuongHieu.TenThuongHieu,
+                    SoLuongTonKho = i.SoLuongTonKho,
+                    MauSac =i.MauSac,
+                    MoTa =i.MoTa,
+                    ThoiLuongBaoHanh=i.ThoiLuongBaoHanh,
+                    GiaBan=i.GiaBan
+                });
+                return list.ToList();
+            }
+            
+>>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
         }
     }
 }

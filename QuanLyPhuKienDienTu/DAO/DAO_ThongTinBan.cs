@@ -94,38 +94,24 @@ namespace QuanLyPhuKienDienTu.DAO
         }
 
         //Lấy thông tin sản phẩm bằng mã hóa đơn bán
-        //public List<ChiTietBan> ThongTinSanPham(int id)
-        //{
-        //    List<ChiTietBan> listSanPham = new List<ChiTietBan>();
+        public List<ChiTiet> ThongTinSanPham(int id)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var data = from cthd in db.ChiTietHoaDonBans
+                            join sp in db.SanPhams on cthd.MaSanPham equals sp.MaSanPham
+                            where cthd.MaHoaDonBan == id
+                            select new ChiTiet
+                            {
+                                MaSanPham = sp.MaSanPham,
+                                TenSanPham = sp.TenSanPham,
+                                MauSac = sp.MauSac,
+                                SoLuong = cthd.SoLuongBan,
+                                Gia = sp.GiaBan
+                            };
 
-        //    using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-        //    {
-        //        var query = from cthd in db.ChiTietHoaDonBans
-        //                    join sp in db.SanPhams on cthd.MaSanPham equals sp.MaSanPham
-        //                    where cthd.MaHoaDonBan == id
-        //                    select new
-        //                    {
-        //                        MaSanPham = sp.MaSanPham,
-        //                        TenSanPham = sp.TenSanPham,
-        //                        MauSac = sp.MauSac,
-        //                        SoLuongBan = cthd.SoLuongBan,
-        //                        GiaBan = sp.GiaBan
-        //                    };
-        //        foreach (var item in query)
-        //        {
-        //            ChiTietBan chiTiet = new ChiTietBan()
-        //            {
-        //                MaSanPham = item.MaSanPham,
-        //                TenSanPham = item.TenSanPham,
-        //                MauSac = item.MauSac,
-        //                SoLuongBan = item.SoLuongBan,
-        //                GiaBan = Math.Round(item.GiaBan)
-        //            };
-        //            listSanPham.Add(chiTiet);
-        //        }
-        //    }
-
-        //    return listSanPham;
-        //}
+                return data.ToList();
+            }
+        }
     }
 }

@@ -12,28 +12,27 @@ using System.Windows.Forms;
 
 namespace QuanLyPhuKienDienTu.View
 {
-    public partial class FormChiTietBan : Form
+    public partial class FormChiTietNhap : Form
     {
         public int MaHoaDon { get; set; }
-        public FormChiTietBan(int id)
+        public FormChiTietNhap(int id)
         {
             InitializeComponent();
             MaHoaDon = id;
-            LoadClient();
+            LoadThuongHieu();
             LoadProduct();
         }
 
-        private void LoadClient()
+        private void LoadThuongHieu()
         {
-            KhachHang khachHang = BLL_ThongTinBan.Instance.ThongTinKhachHang(MaHoaDon);
-            lbName.Text = khachHang.TenKhachHang;
-            lbAddress.Text = khachHang.DiaChi;
-            lbPhone.Text = khachHang.SoDienThoai;
+            ThuongHieu thuongHieu = BLL_ThongTinNhap.Instance.ThongTinThuongHieu(MaHoaDon);
+            lbName.Text = thuongHieu.TenThuongHieu;
+            lbOrigin.Text = thuongHieu.XuatXu;
         }
 
         private void LoadProduct()
         {
-            List<ChiTiet> sanPham = BLL_ThongTinBan.Instance.ThongTinSanPham(MaHoaDon);
+            List<ChiTiet> sanPham = BLL_ThongTinNhap.Instance.ThongTinSanPham(MaHoaDon);
 
             for (int i = 1; i <= sanPham.Count; i++)
             {
@@ -48,7 +47,7 @@ namespace QuanLyPhuKienDienTu.View
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

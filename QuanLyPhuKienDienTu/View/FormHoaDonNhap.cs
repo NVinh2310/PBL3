@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace QuanLyPhuKienDienTu.View
 {
-    public partial class FormHoaDonBan : Form
+    public partial class FormHoaDonNhap : Form
     {
-        public FormHoaDonBan()
+        public FormHoaDonNhap()
         {
             InitializeComponent();
-            LoadDaTa();
+            LoadData();
             SetCBB();
         }
 
-        private void LoadDaTa()
+        private void LoadData()
         {
-            dataGridView.DataSource = BLL_ThongTinBan.Instance.HoaDonBan();
-            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
+            dataGridView.DataSource = BLL_ThongTinNhap.Instance.HoaDonNhap();
+            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonNhap" });
         }
 
         private void SetCBB()
@@ -35,12 +35,10 @@ namespace QuanLyPhuKienDienTu.View
             cbbSort.Items.AddRange(new string[] { "Tên", "Ngày", "Số lượng", "Giá bán" });
             cbbSort.SelectedIndex = 0;
         }
-
         private void btnShow_Click(object sender, EventArgs e)
         {
-            LoadDaTa();
+            LoadData();
         }
-
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
             DateTime dateTime = dateTimePicker1.Value;
@@ -49,13 +47,13 @@ namespace QuanLyPhuKienDienTu.View
             switch (type)
             {
                 case "Ngày":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoNgay(dateTime);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.TimTheoNgay(dateTime);
                     break;
                 case "Tháng":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoThang(dateTime);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.TimTheoThang(dateTime);
                     break;
                 case "Năm":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoNam(dateTime);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.TimTheoNam(dateTime);
                     break;
                 default:
                     MessageBox.Show("Không hợp lệ");
@@ -73,15 +71,16 @@ namespace QuanLyPhuKienDienTu.View
                 return;
             }
 
-            dataGridView.DataSource = BLL_ThongTinBan.Instance.TimTheoTen(name);
-            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonBan" });
+            dataGridView.DataSource = BLL_ThongTinNhap.Instance.TimTheoTen(name);
+            Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonNhap" });
         }
+
         private void btnSort_Click(object sender, EventArgs e)
         {
-            List<ThongTinBan> list = new List<ThongTinBan>();
-            foreach(DataGridViewRow row in dataGridView.Rows)
+            List<ThongTinNhap> list = new List<ThongTinNhap>();
+            foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                ThongTinBan info = row.DataBoundItem as ThongTinBan;
+                ThongTinNhap info = row.DataBoundItem as ThongTinNhap;
                 list.Add(info);
             }
 
@@ -89,16 +88,16 @@ namespace QuanLyPhuKienDienTu.View
             switch (type)
             {
                 case "Tên":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoTen(list);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.SapXepTheoTen(list);
                     break;
                 case "Ngày":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoNgay(list);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.SapXepTheoNgay(list);
                     break;
                 case "Số lượng":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoSoLuong(list);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.SapXepTheoSoLuong(list);
                     break;
                 case "Giá bán":
-                    dataGridView.DataSource = BLL_ThongTinBan.Instance.SapXepTheoGiaBan(list);
+                    dataGridView.DataSource = BLL_ThongTinNhap.Instance.SapXepTheoGiaBan(list);
                     break;
                 default:
                     MessageBox.Show("Không hợp lệ");
@@ -108,9 +107,9 @@ namespace QuanLyPhuKienDienTu.View
 
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonBan"].Value;
+            int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonNhap"].Value;
 
-            FormChiTietBan form = new FormChiTietBan(idHoaDon);
+            FormChiTietNhap form = new FormChiTietNhap(idHoaDon);
             this.Hide();
             form.ShowDialog();
             this.Show();
@@ -120,5 +119,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             this.Close();
         }
+
+        
     }
 }

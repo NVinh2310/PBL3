@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhuKienDienTu.View
 {
-    partial class FormChiTietBan
+    partial class FormChiTietNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbAddress = new System.Windows.Forms.Label();
-            this.lbPhone = new System.Windows.Forms.Label();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.lvDetail = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,62 +36,22 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.exitBtn = new System.Windows.Forms.Button();
+            this.lbOrigin = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // exitBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên khách hàng:";
-            // 
-            // lbName
-            // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(263, 32);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(51, 20);
-            this.lbName.TabIndex = 1;
-            this.lbName.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 113);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Số điện thoại";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(90, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Địa chỉ:";
-            // 
-            // lbAddress
-            // 
-            this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(263, 72);
-            this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(51, 20);
-            this.lbAddress.TabIndex = 4;
-            this.lbAddress.Text = "label5";
-            // 
-            // lbPhone
-            // 
-            this.lbPhone.AutoSize = true;
-            this.lbPhone.Location = new System.Drawing.Point(263, 113);
-            this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(51, 20);
-            this.lbPhone.TabIndex = 5;
-            this.lbPhone.Text = "label6";
+            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitBtn.Location = new System.Drawing.Point(880, 520);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(75, 36);
+            this.exitBtn.TabIndex = 47;
+            this.exitBtn.Text = "Thoát";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // lvDetail
             // 
@@ -110,10 +65,10 @@
             this.lvDetail.FullRowSelect = true;
             this.lvDetail.GridLines = true;
             this.lvDetail.HideSelection = false;
-            this.lvDetail.Location = new System.Drawing.Point(58, 158);
+            this.lvDetail.Location = new System.Drawing.Point(57, 107);
             this.lvDetail.Name = "lvDetail";
             this.lvDetail.Size = new System.Drawing.Size(898, 407);
-            this.lvDetail.TabIndex = 38;
+            this.lvDetail.TabIndex = 46;
             this.lvDetail.UseCompatibleStateImageBehavior = false;
             this.lvDetail.View = System.Windows.Forms.View.Details;
             // 
@@ -146,35 +101,57 @@
             this.columnHeader8.Text = "Thành tiền";
             this.columnHeader8.Width = 169;
             // 
-            // exitBtn
+            // lbOrigin
             // 
-            this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.Location = new System.Drawing.Point(881, 571);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(75, 36);
-            this.exitBtn.TabIndex = 39;
-            this.exitBtn.Text = "Thoát";
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.btnExit_Click);
+            this.lbOrigin.AutoSize = true;
+            this.lbOrigin.Location = new System.Drawing.Point(263, 64);
+            this.lbOrigin.Name = "lbOrigin";
+            this.lbOrigin.Size = new System.Drawing.Size(51, 20);
+            this.lbOrigin.TabIndex = 44;
+            this.lbOrigin.Text = "label5";
             // 
-            // FormChiTietBan
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(90, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Xuất xứ";
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(263, 24);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(51, 20);
+            this.lbName.TabIndex = 41;
+            this.lbName.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(90, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Tên thương hiệu:";
+            // 
+            // FormChiTietNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 622);
+            this.ClientSize = new System.Drawing.Size(1015, 582);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.lvDetail);
-            this.Controls.Add(this.lbPhone);
-            this.Controls.Add(this.lbAddress);
+            this.Controls.Add(this.lbOrigin);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FormChiTietBan";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormChiTietBan";
+            this.Name = "FormChiTietNhap";
+            this.Text = "FormChiTietNhap";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,12 +159,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lbAddress;
-        private System.Windows.Forms.Label lbPhone;
+        private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ListView lvDetail;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -195,6 +167,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Label lbOrigin;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label label1;
     }
 }
