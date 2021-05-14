@@ -20,7 +20,6 @@ namespace QuanLyPhuKienDienTu
             this.ChiTietHoaDonBans = new HashSet<ChiTietHoaDonBan>();
             this.ChiTietHoaDonNhaps = new HashSet<ChiTietHoaDonNhap>();
         }
-
     
         public int MaSanPham { get; set; }
         public int MaThuongHieu { get; set; }
@@ -28,8 +27,8 @@ namespace QuanLyPhuKienDienTu
         public string TenSanPham { get; set; }
         public string MauSac { get; set; }
         public string MoTa { get; set; }
-        public decimal GiaBan { get; set; }
-        public decimal GiaNhap { get; set; }
+        public Nullable<decimal> GiaBan { get; set; }
+        public Nullable<decimal> GiaNhap { get; set; }
         public int ThoiLuongBaoHanh { get; set; }
         public int SoLuongTonKho { get; set; }
     

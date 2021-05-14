@@ -34,11 +34,18 @@ namespace QuanLyPhuKienDienTu.DAO
                     MauSac =i.MauSac,
                     MoTa =i.MoTa,
                     ThoiLuongBaoHanh=i.ThoiLuongBaoHanh,
-                    GiaBan=i.GiaBan
+                    GiaBan= (decimal)i.GiaBan
                 });
                 return list.ToList();
             }
             
         }
+        public List<SanPham> GetSanPham()
+        {
+            QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities();
+            
+                return db.SanPhams.ToList();
+        }
+        
     }
 }

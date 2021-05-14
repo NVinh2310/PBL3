@@ -46,7 +46,6 @@ namespace QuanLyPhuKienDienTu
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.comboBoxLoai = new System.Windows.Forms.ComboBox();
-            this.buttonLoc = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,13 +82,17 @@ namespace QuanLyPhuKienDienTu
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.numericAmountOut = new System.Windows.Forms.NumericUpDown();
+            this.numericSoLuongBan = new System.Windows.Forms.NumericUpDown();
             this.buttonXoa = new System.Windows.Forms.Button();
             this.buttonThem = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxPayment = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Ten = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.payButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numericDiscount = new System.Windows.Forms.NumericUpDown();
@@ -131,7 +134,7 @@ namespace QuanLyPhuKienDienTu
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAmountOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericSoLuongBan)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).BeginInit();
             this.panel2.SuspendLayout();
@@ -273,7 +276,6 @@ namespace QuanLyPhuKienDienTu
             // panel14
             // 
             this.panel14.Controls.Add(this.comboBoxLoai);
-            this.panel14.Controls.Add(this.buttonLoc);
             this.panel14.Controls.Add(this.label17);
             this.panel14.Controls.Add(this.label3);
             this.panel14.Controls.Add(this.label4);
@@ -293,17 +295,6 @@ namespace QuanLyPhuKienDienTu
             this.comboBoxLoai.Name = "comboBoxLoai";
             this.comboBoxLoai.Size = new System.Drawing.Size(116, 28);
             this.comboBoxLoai.TabIndex = 15;
-            // 
-            // buttonLoc
-            // 
-            this.buttonLoc.Location = new System.Drawing.Point(296, 90);
-            this.buttonLoc.Name = "buttonLoc";
-            this.buttonLoc.Size = new System.Drawing.Size(92, 29);
-            this.buttonLoc.TabIndex = 11;
-            this.buttonLoc.Text = "Lọc";
-            this.buttonLoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLoc.UseVisualStyleBackColor = true;
-            this.buttonLoc.Click += new System.EventHandler(this.buttonLoc_Click);
             // 
             // label17
             // 
@@ -640,7 +631,7 @@ namespace QuanLyPhuKienDienTu
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.numericAmountOut);
+            this.panel5.Controls.Add(this.numericSoLuongBan);
             this.panel5.Controls.Add(this.buttonXoa);
             this.panel5.Controls.Add(this.buttonThem);
             this.panel5.Location = new System.Drawing.Point(669, 252);
@@ -658,20 +649,25 @@ namespace QuanLyPhuKienDienTu
             this.label18.TabIndex = 16;
             this.label18.Text = "Số lượng:";
             // 
-            // numericAmountOut
+            // numericSoLuongBan
             // 
-            this.numericAmountOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericAmountOut.Location = new System.Drawing.Point(99, 14);
-            this.numericAmountOut.Margin = new System.Windows.Forms.Padding(4);
-            this.numericAmountOut.Minimum = new decimal(new int[] {
-            100,
+            this.numericSoLuongBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericSoLuongBan.Location = new System.Drawing.Point(99, 14);
+            this.numericSoLuongBan.Margin = new System.Windows.Forms.Padding(4);
+            this.numericSoLuongBan.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
-            -2147483648});
-            this.numericAmountOut.Name = "numericAmountOut";
-            this.numericAmountOut.Size = new System.Drawing.Size(66, 28);
-            this.numericAmountOut.TabIndex = 37;
-            this.numericAmountOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            0});
+            this.numericSoLuongBan.Name = "numericSoLuongBan";
+            this.numericSoLuongBan.Size = new System.Drawing.Size(66, 28);
+            this.numericSoLuongBan.TabIndex = 37;
+            this.numericSoLuongBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericSoLuongBan.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // buttonXoa
             // 
@@ -685,6 +681,7 @@ namespace QuanLyPhuKienDienTu
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // buttonThem
             // 
@@ -698,6 +695,7 @@ namespace QuanLyPhuKienDienTu
             this.buttonThem.Text = "Thêm";
             this.buttonThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // panel4
             // 
@@ -738,12 +736,38 @@ namespace QuanLyPhuKienDienTu
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Ten,
+            this.columnHeader2,
+            this.columnHeader1,
+            this.columnHeader3});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(16, 38);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(427, 546);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Ten
+            // 
+            this.Ten.Text = "Tên Sản Phẩm";
+            this.Ten.Width = 155;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "SLg bán";
+            this.columnHeader2.Width = 79;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Giá Bán";
+            this.columnHeader1.Width = 89;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Thành tiền";
+            this.columnHeader3.Width = 97;
             // 
             // payButton
             // 
@@ -757,6 +781,7 @@ namespace QuanLyPhuKienDienTu
             this.payButton.Text = "Thanh toán";
             this.payButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.payButton.UseVisualStyleBackColor = true;
+            this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
             // label6
             // 
@@ -807,7 +832,6 @@ namespace QuanLyPhuKienDienTu
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(659, 309);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // tabPage2
             // 
@@ -1112,7 +1136,7 @@ namespace QuanLyPhuKienDienTu
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAmountOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericSoLuongBan)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).EndInit();
@@ -1147,7 +1171,6 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBoxTim;
         private System.Windows.Forms.Button buttonTim;
-        private System.Windows.Forms.Button buttonLoc;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem sắpXếpToolStripMenuItem;
@@ -1162,7 +1185,7 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.TextBox textBoxPayment;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button payButton;
-        private System.Windows.Forms.NumericUpDown numericAmountOut;
+        private System.Windows.Forms.NumericUpDown numericSoLuongBan;
         private System.Windows.Forms.NumericUpDown numericDiscount;
         private System.Windows.Forms.Button buttonXoa;
         private System.Windows.Forms.Button buttonThem;
@@ -1221,5 +1244,9 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBoxThoiLuongBH;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ColumnHeader Ten;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

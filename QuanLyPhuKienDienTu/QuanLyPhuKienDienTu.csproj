@@ -72,11 +72,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_HoaDonBan.cs" />
+    <Compile Include="BLL\BLL_HoaDonBanChiTiet.cs" />
     <Compile Include="BLL\BLL_KhachHang.cs" />
     <Compile Include="BLL\BLL_Loai.cs" />
     <Compile Include="BLL\BLL_NhanVien.cs" />
     <Compile Include="BLL\BLL_SanPham.cs" />
     <Compile Include="BLL\BLL_ThuongHieu.cs" />
+    <Compile Include="DAO\DAO_HoaDonBan.cs" />
+    <Compile Include="DAO\DAO_HoaDonBanChiTiet.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
     <Compile Include="BLL\BLL_ThongTinBan.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\ChiTietBan.cs" />
     <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\MenuBan.cs" />
     <Compile Include="DTO\Process.cs" />
     <Compile Include="DTO\SanPham_View.cs" />
     <Compile Include="DTO\TaiKhoan_View.cs" />

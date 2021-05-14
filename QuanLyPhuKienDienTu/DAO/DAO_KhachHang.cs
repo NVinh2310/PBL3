@@ -51,5 +51,12 @@ namespace QuanLyPhuKienDienTu.DAO
                 });
             return khachhang;
         }
+        public KhachHang GetKhanhHangBySDT(int MaKhachHang)
+        {
+            using(QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                return db.KhachHangs.Find(MaKhachHang);
+            }    
+        }
     }
 }

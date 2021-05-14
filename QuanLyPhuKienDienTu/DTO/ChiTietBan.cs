@@ -13,5 +13,6 @@ namespace QuanLyPhuKienDienTu.DTO
         public string MauSac { get; set; }
         public int SoLuongBan { get; set; }
         public decimal GiaBan { get; set; }
+
     }
 }
