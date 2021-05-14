@@ -84,17 +84,17 @@ namespace QuanLyPhuKienDienTu
 
         public void ShowChiTietHoaDonBa(int a)
         {
-            List<ChiTietBan> list = BLL.BLL_ThongTinBan.Instance.ThongTinSanPham(a);
+            List<ChiTiet> list = BLL.BLL_ThongTinBan.Instance.ThongTinSanPham(a);
             decimal TongTienHoaDon =0;
 
-            foreach (ChiTietBan i in list)
+            foreach (ChiTiet i in list)
             {
                 ListViewItem listView = new ListViewItem(i.TenSanPham) { Tag = i};
-                listView.SubItems.Add(i.SoLuongBan.ToString());
-                listView.SubItems.Add(i.GiaBan.ToString());
-                listView.SubItems.Add((i.GiaBan * i.SoLuongBan).ToString());
+                listView.SubItems.Add(i.SoLuong.ToString());
+                listView.SubItems.Add(i.Gia.ToString());
+                listView.SubItems.Add((i.Gia * i.SoLuong).ToString());
                 listView.Tag = i;
-                TongTienHoaDon += (Decimal)(i.GiaBan * i.SoLuongBan);
+                TongTienHoaDon += (Decimal)(i.Gia * i.SoLuong);
                 listView1.Items.Add(listView);
             }
                 textBoxPayment.Text = TongTienHoaDon.ToString();

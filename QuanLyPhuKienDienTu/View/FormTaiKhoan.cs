@@ -75,7 +75,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             string name = txbSearch.Text;
             dataGridView1.DataSource = BLL_TaiKhoan.Instance.GetTaiKhoanBangTen(name);
-            Process.InvisibleAttributes(dataGridView1, new object[] { "MaTaiKhoan" });
+            Process.InvisibleAttributes(dataGridView1, new object[] { "MaTaiKhoan" }); 
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

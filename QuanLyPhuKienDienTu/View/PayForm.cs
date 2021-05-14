@@ -41,7 +41,7 @@ namespace QuanLyPhuKienDienTu
             // Bill mới, chưa có món
             // Bill cũ, chưa có món cần thêm
             // Bill cũ, đã có món cần thêm( Cập nhật lại số lượng)
-            ChiTietBan ctb = new ChiTietBan();
+           // ChiTiet ctb = new ChiTiet();
             //int a = BLL.BLL_HoaDonBan.Instance.GetMaHoaDonMax() ;
             //foreach(ListViewItem i in listView1.Items)
             //{

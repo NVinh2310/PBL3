@@ -25,11 +25,38 @@ namespace QuanLyPhuKienDienTu.BLL
 
         private BLL_SanPham() { }
 
-        public List<SanPham> GetKhachHang()
+        public List<SanPham> GetSanPham()
         {
-            return BLL_SanPham.Instance.GetKhachHang();
+            return DAO_SanPham.Instance.GetSanPham();
         }
-        //Lấy danh sách SanPham_View kêt hợp tìm theo tên, loại, thương hiệu và giá. 
+        public List<SanPham> GetListSP(int masp, string namesp)
+        {
+            return DAO_SanPham.Instance.GetListSP(masp, namesp);
+        }
+        public List<SanPham> GetSanPhamByName(string name)
+        {
+            return DAO_SanPham.Instance.GetSanPhamByName(name);
+        }
+        public List<ThuongHieu> GetThuongHieu()
+        {
+            return DAO_SanPham.Instance.GetThuongHieu();
+        }
+        public List<Loai> GetLoai()
+        {
+            return DAO_SanPham.Instance.GetLoai();
+        }
+        public bool ThemSanPham(SanPham s)
+        {
+            return DAO_SanPham.Instance.ThemSanPham(s);
+        }
+        public bool SuaSanPham(int masp, SanPham product)
+        {
+            return DAO_SanPham.Instance.SuaSanPham(masp, product);
+        }
+        public bool XoaSanPham(int masp)
+        {
+            return DAO_SanPham.Instance.XoaSanPham(masp);
+        }// ni là của con P
         public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu , string gia )
         {
             List<SanPham_View> list = new List<SanPham_View>();

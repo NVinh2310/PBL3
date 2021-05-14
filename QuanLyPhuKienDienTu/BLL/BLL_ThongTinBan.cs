@@ -92,7 +92,7 @@ namespace QuanLyPhuKienDienTu.BLL
         }
 
 
-        public List<ChiTietBan> ThongTinSanPham(int id)
+        public List<ChiTiet> ThongTinSanPham(int id)
         {
             return DAO_ThongTinBan.Instance.ThongTinSanPham(id);
         }
@@ -145,6 +145,7 @@ namespace QuanLyPhuKienDienTu.BLL
 
             result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
             {
+                
                 return (tt1.TongGiaBan.CompareTo(tt2.TongGiaBan));
             });
 

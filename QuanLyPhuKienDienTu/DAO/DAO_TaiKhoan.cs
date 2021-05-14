@@ -97,8 +97,8 @@ namespace QuanLyPhuKienDienTu.DAO
                 try
                 {
                     TaiKhoan account = db.TaiKhoans.Find(id);
-                    account.Password = newPassword;
-                    db.SaveChanges();
+                    account.Password = newPassword; 
+                    db.SaveChanges(); 
                 }
                 catch (Exception)
                 {
