@@ -117,11 +117,12 @@ namespace QuanLyPhuKienDienTu.View
         {
            if(flagluu == 0) 
             {
-         
-                /*if (!BLL_KhachHang.Instance.CheckMaKH(kh.MaKhachHang))
+                if(Process.IsEmpty(txtMaKH.Text) || Process.IsEmpty(txtTenKH.Text) || Process.IsEmpty(txtDiaChi.Text) || Process.IsEmpty(txtSĐT.Text))
                 {
-                    MessageBox.Show("Mã khách hàng bạn thêm vào đã có sẵn !", "Mời bạn nhập lại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }    
+               
                 try
                 {
                     KhachHang customer = new KhachHang()
@@ -177,11 +178,29 @@ namespace QuanLyPhuKienDienTu.View
             DisEnl(false);
             return;
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        public void getrecord()
         {
             string name = txtSearch.Text;
             dgvKhachHang.DataSource = BLL_KhachHang.Instance.GetKhachHangByName(name);
+            var data = dgvKhachHang.DataSource;
+            txtMaKH.DataBindings.Clear();
+            txtMaKH.DataBindings.Add("Text", data, "MaKhachHang");
+            txtTenKH.DataBindings.Clear();
+            txtTenKH.DataBindings.Add("Text", data, "TenKhachHang");
+            txtDiaChi.DataBindings.Clear();
+            txtDiaChi.DataBindings.Add("Text", data, "DiaChi");
+            txtSĐT.DataBindings.Clear();
+            txtSĐT.DataBindings.Add("Text", data, "SoDienThoai");
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string name = txtSearch.Text;
+            if(Process.IsEmpty(name))
+            {
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            getrecord();
             Process.InvisibleAttributes(dgvKhachHang, new object[] { "MaKhachHang" });
         }
 
