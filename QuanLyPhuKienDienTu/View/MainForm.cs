@@ -13,13 +13,16 @@ namespace QuanLyPhuKienDienTu
 {
     public partial class MainForm : Form
     {
+        public List<SanPham> listPaySanPham { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
             setComboBox();
             show();
+            LoadSanPhamView();
         }
-
+        #region Method
         private void setComboBox()
         {
             comboBoxLoai.Items.Add(new CBBItem
@@ -32,18 +35,18 @@ namespace QuanLyPhuKienDienTu
                 Value = 0,
                 Text = "All"
             });
-            
-            foreach (Loai i in BLL.BLL_Loai.Instance.GetLoai())
+
+            foreach (Loai i in BLL.BLL_Loai.Instance.GetListLoai())
             {
                 comboBoxLoai.Items.Add(new CBBItem
                 {
-                    Value= i.MaLoai,
-                    Text =i.TenLoai
+                    Value = i.MaLoai,
+                    Text = i.TenLoai
                 });
             }
             comboBoxLoai.SelectedIndex = 0;
-            
-            foreach (ThuongHieu i in BLL.BLL_ThuongHieu.Instance.GetThuongHieu())
+
+            foreach (ThuongHieu i in BLL.BLL_ThuongHieu.Instance.GetListThuongHieu())
             {
                 comboBoxHang.Items.Add(new CBBItem
                 {
@@ -57,12 +60,119 @@ namespace QuanLyPhuKienDienTu
         public void show()
         {
             dataGridView1.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", "All", "All");
+            SetShow();
+
+        }
+        public void SetShow()
+        {
             dataGridView1.Columns["MoTa"].Visible = false;
             dataGridView1.Columns["MaSanPham"].Visible = false;
             dataGridView1.Columns["MauSac"].Visible = false;
             dataGridView1.Columns["ThoiLuongBaoHanh"].Visible = false;
         }
-        
+        public void LoadSanPhamView()
+        {
+            textBoxTenSp.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "TenSanPham"));
+            textBoxThuongHieu.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "TenThuongHieu"));
+            textBoxLoai.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "TenLoai"));
+            textBoxMau.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MauSac"));
+            textBoxThoiLuongBH.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "ThoiLuongBaoHanh"));
+            textBoxGiaBan.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "GiaBan"));
+            textBoxSoLuongTon.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "SoLuongTonKho"));
+            labelMoTa.DataBindings.Add(new Binding("Text", dataGridView1.DataSource, "MoTa"));
+        }
+
+        public void ShowChiTietHoaDonBa(int a)
+        {
+            List<ChiTiet> list = BLL.BLL_ThongTinBan.Instance.ThongTinSanPham(a);
+            decimal TongTienHoaDon =0;
+
+            foreach (ChiTiet i in list)
+            {
+                ListViewItem listView = new ListViewItem(i.TenSanPham) { Tag = i};
+                listView.SubItems.Add(i.SoLuong.ToString());
+                listView.SubItems.Add(i.Gia.ToString());
+                listView.SubItems.Add((i.Gia * i.SoLuong).ToString());
+                listView.Tag = i;
+                TongTienHoaDon += (Decimal)(i.Gia * i.SoLuong);
+                listView1.Items.Add(listView);
+            }
+                textBoxPayment.Text = TongTienHoaDon.ToString();
+
+        }
+        public int check(int MSP)
+        {
+            foreach (ListViewItem i in listView1.Items)
+            {
+                if (i.Text == BLL.BLL_SanPham.Instance.GetSanPhamByID(MSP).TenSanPham)
+                    return i.Index;
+            }
+            return -100;
+        }
+        public void AddListView()
+        {
+            
+            int a= Convert.ToInt32(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString());
+            int index = check(a);
+            SanPham_View i =BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
+            decimal TongTienHoaDon = 0;
+            int SoLuongBan = Convert.ToInt32(numericSoLuongBan.Value);
+
+            if(index!= -100)
+            {
+
+                int SLgSau = 0;
+                int SLgTruoc = Convert.ToInt32(listView1.Items[index].SubItems[1].Text);
+                SLgSau = SLgTruoc + Convert.ToInt32(numericSoLuongBan.Value);
+                Decimal GiaBan = Convert.ToDecimal(listView1.Items[index].SubItems[2].Text);
+                listView1.Items[index].SubItems[1].Text = SLgSau.ToString();
+                listView1.Items[index].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
+                TongTienHoaDon = Convert.ToDecimal(textBoxPayment.Text) +(SLgSau * GiaBan);
+                textBoxPayment.Text = TongTienHoaDon.ToString();
+            }    
+            else
+            {
+                ListViewItem listView = new ListViewItem(i.TenSanPham);
+                listView.SubItems.Add(numericSoLuongBan.Value.ToString());
+                listView.SubItems.Add(i.GiaBan.ToString());
+                listView.SubItems.Add((i.GiaBan * SoLuongBan).ToString());
+                TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongBan);
+                listView1.Items.Add(listView);
+                textBoxPayment.Text = TongTienHoaDon.ToString();
+            }    
+
+        }
+
+        public void DeleteListView()
+        {
+            string tensp =listView1.SelectedItems[0].SubItems[0].Text;
+            int SLgSau = 0;
+            int SLgTruoc = Convert.ToInt32(listView1.SelectedItems[0].SubItems[1].Text);
+            SLgSau = SLgTruoc - Convert.ToInt32(numericSoLuongBan.Value);
+            if(SLgSau <1)
+            {
+                Decimal TongTienHoaDon = Convert.ToDecimal(textBoxPayment.Text) - Convert.ToDecimal(listView1.SelectedItems[0].SubItems[3].Text);
+                listView1.SelectedItems[0].Remove();
+                textBoxPayment.Text = TongTienHoaDon.ToString();
+            }    
+            else
+            {
+                Decimal GiaBan = Convert.ToDecimal(listView1.SelectedItems[0].SubItems[2].Text);
+                listView1.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
+                listView1.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan ).ToString());
+                Decimal TongTienHoaDon = Convert.ToDecimal(textBoxPayment.Text) - (SLgSau * GiaBan);
+                textBoxPayment.Text = TongTienHoaDon.ToString();
+            }    
+
+        }
+
+        #endregion
+
+
+
+
+
+        #region Event
         private void buttonTim_Click(object sender, EventArgs e)
         {
             string loai = comboBoxLoai.SelectedItem.ToString();
@@ -70,40 +180,40 @@ namespace QuanLyPhuKienDienTu
             string gia = comboBoxGia.SelectedItem.ToString();
 
             dataGridView1.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views(textBoxTim.Text, loai, thuonghieu, gia);
-            dataGridView1.Columns["MoTa"].Visible = false;
-            dataGridView1.Columns["MaSanPham"].Visible = false;
-            dataGridView1.Columns["MauSac"].Visible = false;
-            dataGridView1.Columns["ThoiLuongBaoHanh"].Visible = false;
-        }
+            SetShow();
 
-        private void buttonLoc_Click(object sender, EventArgs e)
-        {
         }
-
         
-        public void LoadSanPhamView(int maSanPhamView)
+        
+        private void buttonThem_Click(object sender, EventArgs e)
         {
-            foreach( SanPham_View i in BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", "All", "All"))
-            {
-                if(maSanPhamView == i.MaSanPham)
-                {
-                    textBoxTenSp.Text = i.TenSanPham;
-                    textBoxThuongHieu.Text = i.TenThuongHieu;
-                    textBoxThoiLuongBH.Text = i.ThoiLuongBaoHanh.ToString();
-                    textBoxGiaBan.Text = i.GiaBan.ToString();
-                    textBoxLoai.Text = i.TenLoai;
-                    textBoxSoLuongTon.Text = i.SoLuongTonKho.ToString();
-                    labelMoTa.Text = i.MoTa;
-                    textBoxMau.Text = i.MauSac;
-                        
-                }    
-            }    
+            
+            AddListView();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void payButton_Click(object sender, EventArgs e)
         {
-            int maSanPhamView = Convert.ToInt32(dataGridView1.CurrentRow.Cells["MaSanPham"].Value.ToString());
-            LoadSanPhamView(maSanPhamView);
+            List<ListViewItem> listViewItems = new List<ListViewItem>();
+            foreach (ListViewItem i in listView1.Items)
+            {
+                ListViewItem x = new ListViewItem(i.SubItems[0].Text);
+                x.SubItems.Add(i.SubItems[1].Text);
+                x.SubItems.Add(i.SubItems[2].Text);
+                x.SubItems.Add(i.SubItems[3].Text);
+                listViewItems.Add(x);
+            }
+            PayForm pf = new PayForm(listViewItems);
+            pf.Show();
+
+        }
+        #endregion
+
+        private void buttonXoa_Click(object sender, EventArgs e)
+        {
+            if(listView1.Items.Count!=0&& listView1.SelectedItems.Count !=0)
+            {
+                DeleteListView();
+            }    
         }
     }
 }

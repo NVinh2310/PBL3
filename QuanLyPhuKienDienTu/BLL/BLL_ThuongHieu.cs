@@ -19,9 +19,13 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             private set { instance = value; }
         }
-        public List<ThuongHieu> GetThuongHieu()
+        public List<ThuongHieu> GetListThuongHieu()
         {
-            return DAO.DAO_ThuongHieu.Instance.GetThuongHieu();
+            return DAO.DAO_ThuongHieu.Instance.GetListThuongHieu();
+        }
+        public string GetTenThuongHieuByID(int MaThuongHieu)
+        {
+            return DAO.DAO_ThuongHieu.Instance.GetThuongHieu(MaThuongHieu).TenThuongHieu;
         }
     }
 }

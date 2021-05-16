@@ -19,22 +19,30 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             private set { instance = value; }
         }
-        public List<ThuongHieu> GetThuongHieu()
+        public List<ThuongHieu> GetListThuongHieu()
         {
             List<ThuongHieu> loai = new List<ThuongHieu>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
-                foreach (var i in db.ThuongHieux.ToList())
-                {
-                    loai.Add(new ThuongHieu
-                    {
-                        TenThuongHieu = i.TenThuongHieu,
-                        MaThuongHieu = i.MaThuongHieu
-                    }
-                      );
-                }
-                return loai.ToList();
+                //foreach (var i in db.ThuongHieux.ToList())
+                //{
+                //    loai.Add(new ThuongHieu
+                //    {
+                //        TenThuongHieu = i.TenThuongHieu,
+                //        MaThuongHieu = i.MaThuongHieu
+                //    }
+                //      );
+                //}
+                //return loai.ToList();
+                return db.ThuongHieux.ToList();
             }
+        }
+        public ThuongHieu GetThuongHieu(int MaThuongHieu)
+        {
+            using(QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                return db.ThuongHieux.Find(MaThuongHieu);
+            }    
         }
     }
 }

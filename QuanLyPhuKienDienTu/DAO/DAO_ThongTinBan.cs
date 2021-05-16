@@ -60,7 +60,7 @@ namespace QuanLyPhuKienDienTu.DAO
                         TenKhachHang = item.TenKhach,
                         NgayBan = item.Ngay,
                         TongSoLuong = item.TongSoLuong,
-                        TongGiaBan = Math.Round(item.TongTien)
+                        TongGiaBan = item.TongTien
                     });
                 }
             }

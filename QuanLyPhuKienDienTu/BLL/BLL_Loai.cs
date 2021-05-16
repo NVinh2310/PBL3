@@ -19,9 +19,14 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             private set { instance = value; }
         }
-        public List<Loai> GetLoai()
+        public List<Loai> GetListLoai()
         {
-                return DAO.DAO_Loai.Instance.GetLoai();
+                return DAO.DAO_Loai.Instance.GetListLoai();
+        }
+
+        public string GetTenLoaiByID(int MaLoai)
+        {
+            return DAO.DAO_Loai.Instance.GetLoai(MaLoai).TenLoai;
         }
     }
 }

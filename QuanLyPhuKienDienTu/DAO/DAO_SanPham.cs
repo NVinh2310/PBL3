@@ -227,10 +227,12 @@ namespace QuanLyPhuKienDienTu.DAO
                     MauSac =i.MauSac,
                     MoTa =i.MoTa,
                     ThoiLuongBaoHanh=i.ThoiLuongBaoHanh,
-                    GiaBan=i.GiaBan
+                    GiaBan= (decimal)i.GiaBan
                 });
                 return list.ToList();
             }
         }
+        
+        
     }
 }
