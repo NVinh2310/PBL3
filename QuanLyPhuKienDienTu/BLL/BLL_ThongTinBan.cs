@@ -145,6 +145,7 @@ namespace QuanLyPhuKienDienTu.BLL
 
             result.Sort(delegate (ThongTinBan tt1, ThongTinBan tt2)
             {
+                
                 return (tt1.TongGiaBan.CompareTo(tt2.TongGiaBan));
             });
 

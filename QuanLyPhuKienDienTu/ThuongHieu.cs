@@ -17,8 +17,8 @@ namespace QuanLyPhuKienDienTu
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ThuongHieu()
         {
-            this.HoaDonNhaps = new HashSet<HoaDonNhap>();
-            this.SanPhams = new HashSet<SanPham>();
+            //this.HoaDonNhaps = new HashSet<HoaDonNhap>();
+            // this.SanPhams = new HashSet<SanPham>();
         }
     
         public int MaThuongHieu { get; set; }

@@ -57,9 +57,11 @@
             this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(788, 393);
             this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
             // 
             // label1
@@ -68,7 +70,7 @@
             this.label1.Location = new System.Drawing.Point(492, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên khách hàng:";
             // 
@@ -76,7 +78,7 @@
             // 
             this.txbName.Location = new System.Drawing.Point(622, 44);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(185, 26);
+            this.txbName.Size = new System.Drawing.Size(185, 30);
             this.txbName.TabIndex = 3;
             // 
             // btnSearchName
@@ -94,7 +96,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(164, 44);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(261, 30);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // btnSearchDate
@@ -127,7 +129,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(353, 559);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 20);
+            this.label2.Size = new System.Drawing.Size(305, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nhấn đúp để xem thông tin chi tiết";
             // 
@@ -148,7 +150,7 @@
             this.label3.Location = new System.Drawing.Point(84, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Thời gian:";
             // 
@@ -158,7 +160,7 @@
             this.label4.Location = new System.Drawing.Point(84, 91);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(126, 25);
             this.label4.TabIndex = 11;
             this.label4.Text = "Hiển thị theo:";
             // 
@@ -167,7 +169,7 @@
             this.cbbDate.FormattingEnabled = true;
             this.cbbDate.Location = new System.Drawing.Point(194, 88);
             this.cbbDate.Name = "cbbDate";
-            this.cbbDate.Size = new System.Drawing.Size(145, 28);
+            this.cbbDate.Size = new System.Drawing.Size(145, 33);
             this.cbbDate.TabIndex = 12;
             // 
             // cbbSort
@@ -175,7 +177,7 @@
             this.cbbSort.FormattingEnabled = true;
             this.cbbSort.Location = new System.Drawing.Point(622, 88);
             this.cbbSort.Name = "cbbSort";
-            this.cbbSort.Size = new System.Drawing.Size(172, 28);
+            this.cbbSort.Size = new System.Drawing.Size(172, 33);
             this.cbbSort.TabIndex = 15;
             // 
             // label5
@@ -184,7 +186,7 @@
             this.label5.Location = new System.Drawing.Point(492, 91);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.Size = new System.Drawing.Size(134, 25);
             this.label5.TabIndex = 14;
             this.label5.Text = "Sắp xếp theo:";
             // 
@@ -203,7 +205,7 @@
             // 
             // FormHoaDonBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 620);
             this.Controls.Add(this.cbbSort);

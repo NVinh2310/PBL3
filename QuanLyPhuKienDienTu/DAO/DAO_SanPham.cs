@@ -71,6 +71,32 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             return sp;
         }
+        public List<SanPham> GetSanPhamByThuongHieu(int maTH)
+        {
+            List<SanPham> sp = new List<SanPham>();
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var data = db.SanPhams.Where(p => p.MaThuongHieu == maTH).ToList();
+                foreach (var item in data)
+                {
+                    sp.Add(new SanPham()
+                    {
+                        MaSanPham = item.MaSanPham,
+                        MaThuongHieu = item.MaThuongHieu,
+                        MaLoai = item.MaLoai,
+                        TenSanPham = item.TenSanPham,
+                        MauSac = item.MauSac,
+                        MoTa = item.MoTa,
+                        GiaBan = item.GiaBan,
+                        GiaNhap = item.GiaNhap,
+                        SoLuongTonKho = item.SoLuongTonKho,
+                        ThoiLuongBaoHanh = item.ThoiLuongBaoHanh
+                    });
+                }
+            }
+            return sp;
+
+        }
         public List<ThuongHieu> GetThuongHieu()
         {
             List<ThuongHieu> th = new List<ThuongHieu>();
@@ -174,6 +200,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 return true;
             }
         }
+
         public bool XoaSanPham(int masp)
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
@@ -205,10 +232,56 @@ namespace QuanLyPhuKienDienTu.DAO
                     MauSac =i.MauSac,
                     MoTa =i.MoTa,
                     ThoiLuongBaoHanh=i.ThoiLuongBaoHanh,
-                    GiaBan=i.GiaBan
+                    GiaBan= (decimal)i.GiaBan,
+                    GiaNhap = (decimal)i.GiaNhap
                 });
                 return list.ToList();
             }
         }
+
+        public bool SanPhamSauGiaoDich(int masp, int slgSauGiaoDich)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    SanPham sp = db.SanPhams.Find(masp);
+                    sp.SoLuongTonKho = slgSauGiaoDich;
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+        public List<SanPham_View> GetSanPhamViewByThuongHieu(int maTH)
+        {
+            List<SanPham_View> sp = new List<SanPham_View>();
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var data = db.SanPhams.Where(p => p.MaThuongHieu == maTH).ToList();
+                foreach (var item in data)
+                {
+                    sp.Add(new SanPham_View()
+                    {
+                        MaSanPham = item.MaSanPham,
+                        TenThuongHieu = item.ThuongHieu.TenThuongHieu,
+                        TenLoai = item.Loai.TenLoai,
+                        TenSanPham = item.TenSanPham,
+                        MauSac = item.MauSac,
+                        MoTa = item.MoTa,
+                        GiaBan = item.GiaBan,
+                        GiaNhap = item.GiaNhap,
+                        SoLuongTonKho = item.SoLuongTonKho,
+                        ThoiLuongBaoHanh = item.ThoiLuongBaoHanh
+                    });
+                }
+            }
+            return sp;
+
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -294,8 +295,17 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             return list;
         }
-        // t có làm thêm hàm getSanPham_Views
-        // ko push lên ren có hàm ni?
+        
+        // Lấy SanPham_View theo mã sản phẩm
+        public SanPham_View GetSanPhamByID(int id)
+        {
+            foreach(SanPham_View i in DAO.DAO_SanPham.Instance.GetSanPhamView())
+            {
+                if (i.MaSanPham == id)
+                    return i;
+            }
+            return new SanPham_View();
+        }
         
     }
 }
