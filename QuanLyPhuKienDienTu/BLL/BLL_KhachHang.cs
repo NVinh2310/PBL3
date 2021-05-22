@@ -52,5 +52,31 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_KhachHang.Instance.XoaKhachHang(makh);
         }
+        public int GetMaKhachHangMax()
+        {
+            int t = 0;
+            foreach (KhachHang i in DAO.DAO_KhachHang.Instance.GetKhachHang())
+            {
+                t = i.MaKhachHang;
+            }
+            return t;
+        }
+
+        public KhachHang GetKhachHangBySDT(string sdt)
+        {
+            KhachHang kh = new KhachHang();
+            foreach (KhachHang i in DAO.DAO_KhachHang.Instance.GetKhachHang())
+            {
+                if (String.Compare(sdt, i.SoDienThoai, true) == 0)
+                
+                return i; 
+            }
+            return kh;
+        }
+
+        public KhachHang GetKhachHangByID(int id)
+        {
+            return DAO.DAO_KhachHang.Instance.GetKhachHangByID(id);
+        }
     }
 }

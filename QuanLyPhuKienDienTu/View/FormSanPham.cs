@@ -23,7 +23,7 @@ namespace QuanLyPhuKienDienTu.View
         }
         public void LoadSanPham()
         {
-            dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPham();
+            dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPham_Views("","","","");
             Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
         }
         public void LoadDL()
@@ -125,13 +125,7 @@ namespace QuanLyPhuKienDienTu.View
             txtSL.Enabled = e;
             txtBaoHanh.Enabled = e;
         }
-        private void FormSanPham_Load(object sender, EventArgs e)
-        {
-            LoadSanPham();
-            LoadDL();
-            SetCBBThuongHieu();
-            SetCBBLoai();
-        }
+        
 
         private void btnXem_Click(object sender, EventArgs e)
         {
@@ -141,9 +135,12 @@ namespace QuanLyPhuKienDienTu.View
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMaSP.ReadOnly = true;
+            
             flagluu = 0;
             ClearData(); 
             DisEnl(true);
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -185,19 +182,32 @@ namespace QuanLyPhuKienDienTu.View
                         MessageBox.Show("Xóa không thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            FormSanPham_Load(sender, e);
+            LoadSanPham();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if(flagluu == 0)
             {
+                if(Process.IsEmpty(txtMaSP.Text) ||
+                    Process.IsEmpty(cbbMaTH.Text) ||
+                    Process.IsEmpty(cbbMaL.Text) ||
+                    Process.IsEmpty(txtTenSP.Text) ||
+                    Process.IsEmpty(txtMauSac.Text) ||
+                    Process.IsEmpty(txtMoTa.Text) ||
+                    Process.IsEmpty(txtGiaBan.Text) ||
+                    Process.IsEmpty(txtGiaNhap.Text) ||
+                    Process.IsEmpty(txtSL.Text) ||
+                    Process.IsEmpty(txtBaoHanh.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }    
                 try
                 {
                     SanPham sp = new SanPham()
                     {
-                        MaSanPham = Convert.ToInt32(txtMaSP.Text),
                         MaThuongHieu = ((CBBItem)cbbMaTH.SelectedItem).Value,
                         MaLoai = ((CBBItem)cbbMaL.SelectedItem).Value,
+                        
                         TenSanPham = txtTenSP.Text,
                         MauSac = txtMauSac.Text,
                         MoTa = txtMoTa.Text,
@@ -216,10 +226,10 @@ namespace QuanLyPhuKienDienTu.View
                     }
                     else
                     {
-                        MessageBox.Show("Mã sản phẩm bạn thêm vào đã có sẵn !", "Mời bạn nhập lại!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
                         MessageBox.Show("Thêm thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    FormSanPham_Load(sender, e);
+                    LoadSanPham();
                     DisEnl(false);
                 }
                 catch (Exception)
@@ -231,7 +241,6 @@ namespace QuanLyPhuKienDienTu.View
             else
             {
                 //ham sửa
-                DataGridViewSelectedRowCollection r = dgvSanPham.SelectedRows;
                 SanPham sp = new SanPham
                 {
                     MaSanPham = Convert.ToInt32(txtMaSP.Text),
@@ -245,7 +254,7 @@ namespace QuanLyPhuKienDienTu.View
                     SoLuongTonKho = Convert.ToInt32(txtSL.Text),
                     ThoiLuongBaoHanh = Convert.ToInt32(txtBaoHanh.Text)
                 };
-                int ma = (int)dgvSanPham.SelectedRows[0].Cells["MaSanPham"].Value;
+                int ma = Convert.ToInt32(txtMaSP.Text);
                 if (BLL_SanPham.Instance.SuaSanPham(ma, sp))
                 {
                      MessageBox.Show("Sửa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -253,20 +262,51 @@ namespace QuanLyPhuKienDienTu.View
                 else
                      MessageBox.Show("Sửa không thành công !", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            FormSanPham_Load(sender, e);
+            LoadSanPham();
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            FormSanPham_Load(sender, e);
+            LoadSanPham();
             DisEnl(false);
             return;
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        public void getrecord()
         {
             string name = txtTimKiem.Text;
             dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPhamByName(name);
-            Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
+            var data = dgvSanPham.DataSource;
+            txtMaSP.DataBindings.Clear();
+            txtMaSP.DataBindings.Add("Text", data, "MaSanPham");
+            cbbMaTH.DataBindings.Clear();
+            cbbMaTH.DataBindings.Add("Text", data, "MaThuongHieu");
+            cbbMaL.DataBindings.Clear();
+            cbbMaL.DataBindings.Add("Text", data, "MaLoai");
+            txtTenSP.DataBindings.Clear();
+            txtTenSP.DataBindings.Add("Text", data, "TenSanPham");
+            txtMauSac.DataBindings.Clear();
+            txtMauSac.DataBindings.Add("Text", data, "MauSac");
+            txtMoTa.DataBindings.Clear();
+            txtMoTa.DataBindings.Add("Text", data, "MoTa");
+            txtGiaBan.DataBindings.Clear();
+            txtGiaBan.DataBindings.Add("Text", data, "GiaBan");
+            txtGiaNhap.DataBindings.Clear();
+            txtGiaNhap.DataBindings.Add("Text", data, "GiaNhap");
+            txtSL.DataBindings.Clear();
+            txtSL.DataBindings.Add("Text", data, "SoLuongTonKho");
+            txtBaoHanh.DataBindings.Clear();
+            txtBaoHanh.DataBindings.Add("Text", data, "ThoiLuongBaoHanh");
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string name = txtTimKiem.Text;
+            if(Process.IsEmpty(name))
+            {
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                getrecord();
+                //dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPhamByName(name);
+                Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
         }
 
         private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)

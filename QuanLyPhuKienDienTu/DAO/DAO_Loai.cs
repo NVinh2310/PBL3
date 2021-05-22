@@ -19,7 +19,7 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             private set { instance = value; }
         }
-        public List<Loai> GetLoai()
+        public List<Loai> GetListLoai()
         {
             List<Loai> loai = new List<Loai>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
@@ -36,6 +36,13 @@ namespace QuanLyPhuKienDienTu.DAO
 
                 return loai.ToList();
             }
+        }
+        public Loai GetLoai(int MaLoai)
+        {
+            using(QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                return db.Loais.Find(MaLoai);
+            }    
         }
     }
 }

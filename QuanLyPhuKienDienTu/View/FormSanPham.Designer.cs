@@ -261,7 +261,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtMauSac.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMauSac.Location = new System.Drawing.Point(371, 71);
             this.txtMauSac.Name = "txtMauSac";
-            this.txtMauSac.Size = new System.Drawing.Size(117, 22);
+            this.txtMauSac.Size = new System.Drawing.Size(153, 22);
             this.txtMauSac.TabIndex = 12;
             // 
             // txtTenSP
@@ -445,7 +445,6 @@ namespace QuanLyPhuKienDienTu.View
             this.Controls.Add(this.groupBox1);
             this.Name = "FormSanPham";
             this.Text = "Quản Lý Sản Phẩm";
-            this.Load += new System.EventHandler(this.FormSanPham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

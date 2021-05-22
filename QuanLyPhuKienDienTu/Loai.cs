@@ -19,6 +19,7 @@ namespace QuanLyPhuKienDienTu
         {
             this.SanPhams = new HashSet<SanPham>();
         }
+    
         public int MaLoai { get; set; }
         public string TenLoai { get; set; }
     

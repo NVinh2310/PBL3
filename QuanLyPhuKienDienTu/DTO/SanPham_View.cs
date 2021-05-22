@@ -17,6 +17,7 @@ namespace QuanLyPhuKienDienTu.DTO
         public string MauSac { get; set; }
         public string MoTa { get; set; }
         public int ThoiLuongBaoHanh { get; set; }
+        public decimal GiaNhap { get; set; }
         
     }
 }
