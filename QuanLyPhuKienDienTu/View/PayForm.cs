@@ -1,4 +1,5 @@
 ﻿using QuanLyPhuKienDienTu.DTO;
+using QuanLyPhuKienDienTu.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace QuanLyPhuKienDienTu
 {
     public partial class PayForm : Form
     {
+        public static KhachHang khachHang = new KhachHang(); 
         public List<ListViewItem> ListViewItems { get; set; }
         public  delegate void Mydel();
         public Mydel MD { get; set; }
@@ -34,41 +36,40 @@ namespace QuanLyPhuKienDienTu
             textBoxPrice.Text = TongGiaBan.ToString();
         }
 
+        public void LoadKhachHang(KhachHang i)
+        {
+            textBoxName.Text = i.TenKhachHang;
+            textBoxPhone.Text = i.SoDienThoai;
+            textBoxAddress.Text = i.DiaChi;
+        }
+
         
 
         private void payButton_Click(object sender, EventArgs e)
         {
-            // Bill mới, chưa có món
-            // Bill cũ, chưa có món cần thêm
-            // Bill cũ, đã có món cần thêm( Cập nhật lại số lượng)
-           // ChiTiet ctb = new ChiTiet();
-            //int a = BLL.BLL_HoaDonBan.Instance.GetMaHoaDonMax() ;
-            //foreach(ListViewItem i in listView1.Items)
-            //{
+            //Add bill mới
+            // foreach trong listview add bill info mới
+            
+            if(khachHang.TenKhachHang != null)
+            {
+                DateTime date = dateTimePicker1.Value;
+                BLL.BLL_HoaDonBan.Instance.AddHoaDonBan(khachHang.MaKhachHang, date);
+                int mhd = 0;
+                mhd = BLL.BLL_HoaDonBan.Instance.GetMaHoaDonMax();
 
-            //    MessageBox.Show();
-            //}
-            //int Slg = Convert.ToInt32(numericSoLuongBan.Value);
+                foreach (ListViewItem i in listView1.Items)
+                {
+                    SanPham_View y = new SanPham_View();
+                    y = (SanPham_View)listView1.Items[i.Index].Tag;
+                    int slg = 0;
+                    slg = Convert.ToInt32(listView1.Items[i.Index].SubItems[1].Text);
 
-
-            //if (listView1.Items.Count == 0)
-            //{
-            //    //DAO.DAO_HoaDonBan.Instance.AddHoaDonBan(1, DateTime.Now);
-            //    //a++;
-            //    //DAO.DAO_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(a, MSP, Slg, "New");
-            //    //ShowChiTietHoaDonBa(11);
-            //}
-            //else if (listView1.Items.Count != 0 && check(MSP) == false)
-            //{
-                DAO.DAO_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(1,1, 5, "New nè");
-            //    MessageBox.Show("Thêm moi");
-
-            //}
-            //else if (listView1.Items.Count != 0 && check(MSP) == true)
-            //{
-            //    DAO.DAO_HoaDonBanChiTiet.Instance.UpdateHoaDonBanChiTiet();
-            //    MessageBox.Show("Cập nhật số lg hehe");
-            //}
+                    BLL.BLL_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(mhd, y.MaSanPham, slg, ""); 
+                }
+            }
+            this.Close();
+               
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +80,25 @@ namespace QuanLyPhuKienDienTu
         private void buttonCancle_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            string sdt = textBoxPhone.Text;
+           // MessageBox.Show(sdt);
+            khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(textBoxPhone.Text);
+            LoadKhachHang(khachHang);
+            MessageBox.Show(khachHang.SoDienThoai);
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            FormKhachHang fKH = new FormKhachHang();
+            fKH.ShowDialog();
+            int mkhMax = BLL.BLL_KhachHang.Instance.GetMaKhachHangMax();
+            khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangByID(mkhMax);
+            LoadKhachHang(khachHang);
+            MessageBox.Show(khachHang.SoDienThoai);
         }
     }
 }

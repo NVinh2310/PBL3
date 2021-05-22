@@ -28,5 +28,9 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             return t;
         }
+        public void AddHoaDonBan(int MKH, DateTime NB)
+        {
+            DAO.DAO_HoaDonBan.Instance.AddHoaDonBan(MKH, NB);
+        }
     }
 }

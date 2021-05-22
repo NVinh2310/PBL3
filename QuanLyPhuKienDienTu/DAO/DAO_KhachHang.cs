@@ -179,5 +179,12 @@ namespace QuanLyPhuKienDienTu.DAO
                 return true;
             }
         }
+        public KhachHang GetKhachHangByID(int id)
+        {
+            using(QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                return db.KhachHangs.Find(id);
+            }    
+        }
     }
 }

@@ -30,24 +30,24 @@ namespace QuanLyPhuKienDienTu
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCancle = new System.Windows.Forms.Button();
             this.payButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.buttonNew = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.findButton = new System.Windows.Forms.Button();
-            this.comboBoxPhone = new System.Windows.Forms.ComboBox();
+            this.buttonFind = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -56,7 +56,6 @@ namespace QuanLyPhuKienDienTu
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,14 +64,26 @@ namespace QuanLyPhuKienDienTu
             // 
             this.panel1.Controls.Add(this.buttonCancle);
             this.panel1.Controls.Add(this.payButton);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 800);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonCancle
+            // 
+            this.buttonCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancle.Location = new System.Drawing.Point(308, 746);
+            this.buttonCancle.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancle.Name = "buttonCancle";
+            this.buttonCancle.Size = new System.Drawing.Size(158, 38);
+            this.buttonCancle.TabIndex = 42;
+            this.buttonCancle.Text = "Hủy";
+            this.buttonCancle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCancle.UseVisualStyleBackColor = true;
+            this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click);
             // 
             // payButton
             // 
@@ -88,42 +99,23 @@ namespace QuanLyPhuKienDienTu
             this.payButton.UseVisualStyleBackColor = true;
             this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(216, 706);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 32);
-            this.textBox1.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 714);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 24);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Nhân viên thanh toán:";
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxAddress);
+            this.panel2.Controls.Add(this.textBoxName);
+            this.panel2.Controls.Add(this.textBoxPhone);
+            this.panel2.Controls.Add(this.buttonNew);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.findButton);
-            this.panel2.Controls.Add(this.comboBoxPhone);
+            this.panel2.Controls.Add(this.buttonFind);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBoxAddress);
-            this.panel2.Controls.Add(this.textBoxName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxPrice);
             this.panel2.Controls.Add(this.listView1);
@@ -133,6 +125,40 @@ namespace QuanLyPhuKienDienTu
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(655, 696);
             this.panel2.TabIndex = 1;
+            // 
+            // textBoxAddress
+            // 
+            this.textBoxAddress.Location = new System.Drawing.Point(135, 568);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(356, 28);
+            this.textBoxAddress.TabIndex = 50;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(135, 517);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(356, 28);
+            this.textBoxName.TabIndex = 49;
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(134, 469);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(152, 28);
+            this.textBoxPhone.TabIndex = 48;
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNew.Location = new System.Drawing.Point(396, 468);
+            this.buttonNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(95, 30);
+            this.buttonNew.TabIndex = 47;
+            this.buttonNew.Text = "Mới";
+            this.buttonNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // dateTimePicker1
             // 
@@ -182,34 +208,18 @@ namespace QuanLyPhuKienDienTu
             this.label8.TabIndex = 40;
             this.label8.Text = "Tiền mặt:";
             // 
-            // findButton
+            // buttonFind
             // 
-            this.findButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.findButton.Location = new System.Drawing.Point(553, 468);
-            this.findButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(98, 30);
-            this.findButton.TabIndex = 39;
-            this.findButton.Text = "Tìm";
-            this.findButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.findButton.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxPhone
-            // 
-            this.comboBoxPhone.AutoCompleteCustomSource.AddRange(new string[] {
-            "123",
-            "12312",
-            "2222"});
-            this.comboBoxPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBoxPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxPhone.FormattingEnabled = true;
-            this.comboBoxPhone.Items.AddRange(new object[] {
-            "ádas",
-            "122"});
-            this.comboBoxPhone.Location = new System.Drawing.Point(213, 468);
-            this.comboBoxPhone.Name = "comboBoxPhone";
-            this.comboBoxPhone.Size = new System.Drawing.Size(334, 30);
-            this.comboBoxPhone.TabIndex = 18;
+            this.buttonFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFind.Location = new System.Drawing.Point(292, 468);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(98, 30);
+            this.buttonFind.TabIndex = 39;
+            this.buttonFind.Text = "Tìm";
+            this.buttonFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
             // label6
             // 
@@ -246,28 +256,6 @@ namespace QuanLyPhuKienDienTu
             this.label3.Size = new System.Drawing.Size(72, 24);
             this.label3.TabIndex = 13;
             this.label3.Text = "Địa chỉ:";
-            // 
-            // textBoxAddress
-            // 
-            this.textBoxAddress.Enabled = false;
-            this.textBoxAddress.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(213, 560);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxAddress.Multiline = true;
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(438, 58);
-            this.textBoxAddress.TabIndex = 12;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Enabled = false;
-            this.textBoxName.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(213, 513);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxName.Multiline = true;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(438, 32);
-            this.textBoxName.TabIndex = 9;
             // 
             // label2
             // 
@@ -327,20 +315,6 @@ namespace QuanLyPhuKienDienTu
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin thanh toán";
             // 
-            // buttonCancle
-            // 
-            this.buttonCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancle.Location = new System.Drawing.Point(308, 746);
-            this.buttonCancle.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCancle.Name = "buttonCancle";
-            this.buttonCancle.Size = new System.Drawing.Size(158, 38);
-            this.buttonCancle.TabIndex = 42;
-            this.buttonCancle.Text = "Hủy";
-            this.buttonCancle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCancle.UseVisualStyleBackColor = true;
-            this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click);
-            // 
             // PayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,7 +324,6 @@ namespace QuanLyPhuKienDienTu
             this.Name = "PayForm";
             this.Text = "PayForm";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -361,20 +334,15 @@ namespace QuanLyPhuKienDienTu
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBoxPhone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button findButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button payButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
@@ -387,5 +355,9 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button buttonCancle;
+        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxPhone;
     }
 }

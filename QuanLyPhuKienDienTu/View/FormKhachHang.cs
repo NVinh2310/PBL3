@@ -65,12 +65,13 @@ namespace QuanLyPhuKienDienTu.View
         }
         private void btnXem_Click(object sender, EventArgs e)
         {
-            LoadKhachHang();
-            loadDL();
+           dgvKhachHang.DataSource= DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(Convert.ToInt32(txtMaKH.Text));
+            btnHuy.Enabled = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMaKH.ReadOnly = true;
             flagluu = 0;
             clearData();
             DisEnl(true);
@@ -126,7 +127,7 @@ namespace QuanLyPhuKienDienTu.View
                 {
                     KhachHang customer = new KhachHang()
                     {
-                        MaKhachHang = Convert.ToInt32(txtMaKH.Text),
+                        
                         TenKhachHang = txtTenKH.Text,
                         DiaChi = txtDiaChi.Text,
                         SoDienThoai = txtSĐT.Text
@@ -173,7 +174,7 @@ namespace QuanLyPhuKienDienTu.View
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            btnXem_Click(sender, e);
+            LoadKhachHang();
             DisEnl(false);
             return;
         }
