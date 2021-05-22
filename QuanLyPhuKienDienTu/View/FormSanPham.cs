@@ -188,6 +188,19 @@ namespace QuanLyPhuKienDienTu.View
         {
             if(flagluu == 0)
             {
+                if(Process.IsEmpty(txtMaSP.Text) ||
+                    Process.IsEmpty(cbbMaTH.Text) ||
+                    Process.IsEmpty(cbbMaL.Text) ||
+                    Process.IsEmpty(txtTenSP.Text) ||
+                    Process.IsEmpty(txtMauSac.Text) ||
+                    Process.IsEmpty(txtMoTa.Text) ||
+                    Process.IsEmpty(txtGiaBan.Text) ||
+                    Process.IsEmpty(txtGiaNhap.Text) ||
+                    Process.IsEmpty(txtSL.Text) ||
+                    Process.IsEmpty(txtBaoHanh.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }    
                 try
                 {
                     SanPham sp = new SanPham()
@@ -257,12 +270,43 @@ namespace QuanLyPhuKienDienTu.View
             DisEnl(false);
             return;
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        public void getrecord()
         {
             string name = txtTimKiem.Text;
             dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPhamByName(name);
-            Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
+            var data = dgvSanPham.DataSource;
+            txtMaSP.DataBindings.Clear();
+            txtMaSP.DataBindings.Add("Text", data, "MaSanPham");
+            cbbMaTH.DataBindings.Clear();
+            cbbMaTH.DataBindings.Add("Text", data, "MaThuongHieu");
+            cbbMaL.DataBindings.Clear();
+            cbbMaL.DataBindings.Add("Text", data, "MaLoai");
+            txtTenSP.DataBindings.Clear();
+            txtTenSP.DataBindings.Add("Text", data, "TenSanPham");
+            txtMauSac.DataBindings.Clear();
+            txtMauSac.DataBindings.Add("Text", data, "MauSac");
+            txtMoTa.DataBindings.Clear();
+            txtMoTa.DataBindings.Add("Text", data, "MoTa");
+            txtGiaBan.DataBindings.Clear();
+            txtGiaBan.DataBindings.Add("Text", data, "GiaBan");
+            txtGiaNhap.DataBindings.Clear();
+            txtGiaNhap.DataBindings.Add("Text", data, "GiaNhap");
+            txtSL.DataBindings.Clear();
+            txtSL.DataBindings.Add("Text", data, "SoLuongTonKho");
+            txtBaoHanh.DataBindings.Clear();
+            txtBaoHanh.DataBindings.Add("Text", data, "ThoiLuongBaoHanh");
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string name = txtTimKiem.Text;
+            if(Process.IsEmpty(name))
+            {
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                getrecord();
+                //dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPhamByName(name);
+                Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
         }
 
         private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
