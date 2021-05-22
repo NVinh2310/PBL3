@@ -126,6 +126,7 @@ namespace QuanLyPhuKienDienTu.View
                 {
                     KhachHang customer = new KhachHang()
                     {
+                        //Không cần thêm makhachhang
                         MaKhachHang = Convert.ToInt32(txtMaKH.Text),
                         TenKhachHang = txtTenKH.Text,
                         DiaChi = txtDiaChi.Text,
