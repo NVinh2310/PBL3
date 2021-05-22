@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyPhuKienDienTu.View
 {
-    partial class FormKhachHang
+    partial class FormSanPham
     {
         /// <summary>
         /// Required designer variable.

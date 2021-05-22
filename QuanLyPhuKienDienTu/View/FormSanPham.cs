@@ -12,10 +12,10 @@ using QuanLyPhuKienDienTu.DTO;
 
 namespace QuanLyPhuKienDienTu.View
 {
-    public partial class FormSanPham : Form
+    public partial class FormChiTietNhap : Form
     {
         private int flagluu = 0;
-        public FormSanPham()
+        public FormChiTietNhap()
         {
             InitializeComponent();
             SetCBBThuongHieu();

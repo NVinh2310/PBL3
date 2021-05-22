@@ -71,238 +71,231 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BLL\BLL_KhachHang.cs" />
-    <Compile Include="BLL\BLL_Loai.cs" />
-    <Compile Include="BLL\BLL_NhanVien.cs" />
-    <Compile Include="BLL\BLL_SanPham.cs" />
-    <Compile Include="BLL\BLL_ThongTinNhap.cs" />
-    <Compile Include="BLL\BLL_ThuongHieu.cs" />
-    <Compile Include="DAO\DAO_KhachHang.cs" />
-    <Compile Include="BLL\BLL_TaiKhoan.cs" />
-    <Compile Include="BLL\BLL_ThongTinBan.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="DAO\DAO_Loai.cs" />
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
-    <Compile Include="DAO\DAO_SanPham.cs" />
-    <Compile Include="DAO\DAO_ThongTinBan.cs" />
-    <Compile Include="DAO\DAO_ThongTinNhap.cs" />
-    <Compile Include="DAO\DAO_ThuongHieu.cs" />
-    <Compile Include="DTO\CBBItem.cs" />
-    <Compile Include="DTO\ChiTietBan.cs" />
-    <Compile Include="DTO\KhachHang.cs" />
-    <Compile Include="DTO\Process.cs" />
-    <Compile Include="DTO\SanPham_View.cs" />
-    <Compile Include="DTO\TaiKhoan_View.cs" />
-    <Compile Include="DTO\ThongTinBan.cs" />
-    <Compile Include="DTO\ThongTinNhap.cs" />
-    <Compile Include="View\FormChiTietBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormChiTietBan.Designer.cs">
-      <DependentUpon>FormChiTietBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormChiTietNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormChiTietNhap.Designer.cs">
-      <DependentUpon>FormChiTietNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormHoaDonBan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormHoaDonBan.Designer.cs">
-      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
-    </Compile>
-<<<<<<< HEAD
-    <Compile Include="View\FormSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormSanPham.Designer.cs">
-      <DependentUpon>FormSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormKhachHang.Designer.cs">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
-=======
-    <Compile Include="View\FormHoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormHoaDonNhap.Designer.cs">
-      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
-    </Compile>
-    <Compile Include="View\FormThemTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormThemTaiKhoan.Designer.cs">
-      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTietHoaDonBan.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ChiTietHoaDonNhap.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\DAO_TaiKhoan.cs" />
-    <Compile Include="DAO\DAO_NhanVien.cs" />
-    <Compile Include="HoaDonBan.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDonNhap.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhachHang.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Loai.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormTaiKhoan.Designer.cs">
-      <DependentUpon>FormTaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormDoiMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormDoiMatKhau.Designer.cs">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NhanVien.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View\PayForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PayForm.Designer.cs">
-      <DependentUpon>PayForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormDangNhap.Designer.cs">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyPhuKienDienTu.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhuKienDienTu.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyPhuKienDienTu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyPhuKienDienTu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyPhuKienDienTu.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="SanPham.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoan.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ThuongHieu.cs">
-      <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\FormChiTietBan.resx">
-      <DependentUpon>FormChiTietBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormChiTietNhap.resx">
-      <DependentUpon>FormChiTietNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormHoaDonBan.resx">
-      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
-    </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="View\FormKhachHang.resx">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormSanPham.resx">
-      <DependentUpon>FormSanPham.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="View\FormHoaDonNhap.resx">
-      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
->>>>>>> ecd58743c5e7b8f741a917c8c3c6933b9106b7d5
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
-      <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormTaiKhoan.resx">
-      <DependentUpon>FormTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormDoiMatKhau.resx">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\PayForm.resx">
-      <DependentUpon>PayForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="View\FormDangNhap.resx">
-      <DependentUpon>FormDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EntityDeploy Include="QuanLyPhuKienDienTu.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyPhuKienDienTu.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QuanLyPhuKienDienTu.edmx.diagram">
-      <DependentUpon>QuanLyPhuKienDienTu.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Include="BLL\BLL_KhachHang.cs" />
+		<Compile Include="BLL\BLL_Loai.cs" />
+		<Compile Include="BLL\BLL_NhanVien.cs" />
+		<Compile Include="BLL\BLL_SanPham.cs" />
+		<Compile Include="BLL\BLL_ThongTinNhap.cs" />
+		<Compile Include="BLL\BLL_ThuongHieu.cs" />
+		<Compile Include="DAO\DAO_KhachHang.cs" />
+		<Compile Include="BLL\BLL_TaiKhoan.cs" />
+		<Compile Include="BLL\BLL_ThongTinBan.cs" />
+		<Compile Include="DAO\DAO_Loai.cs" />
+		<Compile Include="DAO\DAO_SanPham.cs" />
+		<Compile Include="DAO\DAO_ThongTinBan.cs" />
+		<Compile Include="DAO\DAO_ThongTinNhap.cs" />
+		<Compile Include="DAO\DAO_ThuongHieu.cs" />
+		<Compile Include="DTO\CBBItem.cs" />
+		<Compile Include="DTO\ChiTietBan.cs" />
+		<Compile Include="DTO\KhachHang.cs" />
+		<Compile Include="DTO\Process.cs" />
+		<Compile Include="DTO\SanPham_View.cs" />
+		<Compile Include="DTO\TaiKhoan_View.cs" />
+		<Compile Include="DTO\ThongTinBan.cs" />
+		<Compile Include="DTO\ThongTinNhap.cs" />
+		<Compile Include="View\FormChiTietBan.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormChiTietBan.Designer.cs">
+			<DependentUpon>FormChiTietBan.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormChiTietNhap.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormChiTietNhap.Designer.cs">
+			<DependentUpon>FormChiTietNhap.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormHoaDonBan.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormHoaDonBan.Designer.cs">
+			<DependentUpon>FormHoaDonBan.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormSanPham.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormSanPham.Designer.cs">
+			<DependentUpon>FormSanPham.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormKhachHang.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormKhachHang.Designer.cs">
+			<DependentUpon>FormKhachHang.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormHoaDonNhap.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormHoaDonNhap.Designer.cs">
+			<DependentUpon>FormHoaDonNhap.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormThemTaiKhoan.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormThemTaiKhoan.Designer.cs">
+			<DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\AdminForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\AdminForm.Designer.cs">
+			<DependentUpon>AdminForm.cs</DependentUpon>
+		</Compile>
+		<Compile Include="ChiTietHoaDonBan.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="ChiTietHoaDonNhap.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="DAO\DAO_TaiKhoan.cs" />
+		<Compile Include="DAO\DAO_NhanVien.cs" />
+		<Compile Include="HoaDonBan.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="HoaDonNhap.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="KhachHang.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="Loai.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormTaiKhoan.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormTaiKhoan.Designer.cs">
+			<DependentUpon>FormTaiKhoan.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\MainForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\MainForm.Designer.cs">
+			<DependentUpon>MainForm.cs</DependentUpon>
+		</Compile>
+		<Compile Include="View\FormDoiMatKhau.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormDoiMatKhau.Designer.cs">
+			<DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+		</Compile>
+		<Compile Include="NhanVien.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="View\PayForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\PayForm.Designer.cs">
+			<DependentUpon>PayForm.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Program.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="View\FormDangNhap.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="View\FormDangNhap.Designer.cs">
+			<DependentUpon>FormDangNhap.cs</DependentUpon>
+		</Compile>
+		<Compile Include="QuanLyPhuKienDienTu.Context.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>QuanLyPhuKienDienTu.Context.tt</DependentUpon>
+		</Compile>
+		<Compile Include="QuanLyPhuKienDienTu.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="QuanLyPhuKienDienTu.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>QuanLyPhuKienDienTu.edmx</DependentUpon>
+		</Compile>
+		<Compile Include="SanPham.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="sp_helpdiagramdefinition_Result.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="sp_helpdiagrams_Result.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="sysdiagram.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="TaiKhoan.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<Compile Include="ThuongHieu.cs">
+			<DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
+		</Compile>
+		<EmbeddedResource Include="View\FormChiTietBan.resx">
+			<DependentUpon>FormChiTietBan.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormChiTietNhap.resx">
+			<DependentUpon>FormChiTietNhap.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormHoaDonBan.resx">
+			<DependentUpon>FormHoaDonBan.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormKhachHang.resx">
+			<DependentUpon>FormKhachHang.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormSanPham.resx">
+			<DependentUpon>FormSanPham.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormHoaDonNhap.resx">
+			<DependentUpon>FormHoaDonNhap.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormThemTaiKhoan.resx">
+			<DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\AdminForm.resx">
+			<DependentUpon>AdminForm.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormTaiKhoan.resx">
+			<DependentUpon>FormTaiKhoan.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\MainForm.resx">
+			<DependentUpon>MainForm.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\FormDoiMatKhau.resx">
+			<DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="View\PayForm.resx">
+			<DependentUpon>PayForm.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<Compile Include="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<EmbeddedResource Include="View\FormDangNhap.resx">
+			<DependentUpon>FormDangNhap.cs</DependentUpon>
+		</EmbeddedResource>
+		<None Include="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<Compile Include="Properties\Settings.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+		</Compile>
+		<EntityDeploy Include="QuanLyPhuKienDienTu.edmx">
+			<Generator>EntityModelCodeGenerator</Generator>
+			<LastGenOutput>QuanLyPhuKienDienTu.Designer.cs</LastGenOutput>
+		</EntityDeploy>
+		<None Include="QuanLyPhuKienDienTu.edmx.diagram">
+			<DependentUpon>QuanLyPhuKienDienTu.edmx</DependentUpon>
+		</None>
+	</ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
