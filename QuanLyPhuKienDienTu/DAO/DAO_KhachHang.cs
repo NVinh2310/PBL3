@@ -40,7 +40,6 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             return khachhang;
         }
-        //hàm này không làm gì
         public List<KhachHang> GetListKH(int makh, string name)
         {
             QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities();
@@ -56,6 +55,31 @@ namespace QuanLyPhuKienDienTu.DAO
                 data = list.ToList();
             }
             return data;
+        }
+        public int GetMaKH(int ma, string name)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    var data = from u in db.KhachHangs
+                               where (u.MaKhachHang == ma && u.TenKhachHang == name)
+                               select u;
+                    foreach(var i in data)
+                    {
+                        return i.MaKhachHang;
+                    }
+                    return -1;
+                }
+                catch (Exception)
+                {
+                    return -1;
+                }
+            }
+        }
+        internal int GetListKH(string ma, string name)
+        {
+            throw new NotImplementedException();
         }
 
         public List<KhachHang> GetKhachHangByName(string name)
@@ -83,7 +107,6 @@ namespace QuanLyPhuKienDienTu.DAO
             {
                 try
                 {
-                    //cần sửa ở đây
                     if (!CheckMaKH(customer.MaKhachHang))
                     {
                         return false;
@@ -101,7 +124,6 @@ namespace QuanLyPhuKienDienTu.DAO
                 return true;
             }
         }
-        //??????
         public bool CheckMaKH(int makh)
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
@@ -120,18 +142,14 @@ namespace QuanLyPhuKienDienTu.DAO
                 }
             }    
         }
-        public bool SuaKhachHang(int makh, KhachHang customer) 
+        public bool SuaKhachHang(int makh, KhachHang customer /*string name*/) 
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
                 try
                 {  
                     KhachHang kh = db.KhachHangs.Find(makh);
-
-                    //Cần thiết không ??
                     kh.MaKhachHang = makh;
-                    //////
-                    ///
                     kh.TenKhachHang = customer.TenKhachHang;
                     kh.DiaChi = customer.DiaChi;
                     kh.SoDienThoai = customer.SoDienThoai;

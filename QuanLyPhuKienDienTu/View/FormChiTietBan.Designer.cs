@@ -1,6 +1,6 @@
 ﻿namespace QuanLyPhuKienDienTu.View
 {
-    partial class FormChiTietNhap
+    partial class FormChiTietBan
     {
         /// <summary>
         /// Required designer variable.

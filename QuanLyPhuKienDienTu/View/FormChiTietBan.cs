@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace QuanLyPhuKienDienTu.View
 {
-    public partial class FormChiTietNhap : Form
+    public partial class FormChiTietBan : Form
     {
         public int MaHoaDon { get; set; }
-        public FormChiTietNhap(int id)
+        public FormChiTietBan(int id)
         {
             InitializeComponent();
             MaHoaDon = id;

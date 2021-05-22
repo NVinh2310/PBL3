@@ -29,6 +29,10 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_SanPham.Instance.GetSanPham();
         }
+        public List<SanPham> GetListSP(int masp, string namesp)
+        {
+            return DAO_SanPham.Instance.GetListSP(masp, namesp);
+        }
         public List<SanPham> GetSanPhamByName(string name)
         {
             return DAO_SanPham.Instance.GetSanPhamByName(name);
@@ -52,7 +56,7 @@ namespace QuanLyPhuKienDienTu.BLL
         public bool XoaSanPham(int masp)
         {
             return DAO_SanPham.Instance.XoaSanPham(masp);
-        }// ni là của con P
+        }
         public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu , string gia )
         {
             List<SanPham_View> list = new List<SanPham_View>();

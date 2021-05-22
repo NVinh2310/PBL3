@@ -20,7 +20,10 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             private set { instance = value; }
         }
-        private DAO_SanPham() {}
+        private DAO_SanPham()
+        {
+
+        }
         public List<SanPham> GetSanPham()
         {
             List<SanPham> sp = new List<SanPham>();
@@ -46,6 +49,24 @@ namespace QuanLyPhuKienDienTu.DAO
             return sp;
         }
         // tra ve danh sach tat ca cac san pham theo masp va namesp
+        public List<SanPham> GetListSP(int masp, string namesp)
+        {
+            List<SanPham> data = new List<SanPham>();
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                if(masp == 0)
+                {
+                    var list = db.SanPhams.Where(p => p.TenSanPham.Contains(namesp)).Select(p => p);
+                    data = list.ToList();
+                }
+                else
+                {
+                    var list = db.SanPhams.Where(p => p.MaSanPham == masp && p.TenSanPham.Contains(namesp)).Select(p => p);
+                    data = list.ToList();
+                }
+            }
+            return data;
+        }
         public List<SanPham> GetSanPhamByName(string name)
         {
             List<SanPham> sp = new List<SanPham>();
@@ -110,6 +131,7 @@ namespace QuanLyPhuKienDienTu.DAO
                         MaThuongHieu = item.MaThuongHieu,
                         TenThuongHieu = item.TenThuongHieu,
                         XuatXu = item.XuatXu,
+                        
                     });
 
                 }
@@ -157,7 +179,6 @@ namespace QuanLyPhuKienDienTu.DAO
             {
                 try
                 {
-                    //Không cần thiết
                     if (!CheckMaSP(s.MaSanPham))
                     {
                         return false;
@@ -182,6 +203,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 try
                 {
                     SanPham sp = db.SanPhams.Find(masp);
+                    sp.MaSanPham = masp;
                     sp.TenSanPham = product.TenSanPham;
                     sp.MaThuongHieu = product.MaThuongHieu;
                     sp.MaLoai = product.MaLoai;

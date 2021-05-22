@@ -110,7 +110,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             int idHoaDon = (int)dataGridView.SelectedRows[0].Cells["MaHoaDonBan"].Value;
 
-            FormChiTietNhap form = new FormChiTietNhap(idHoaDon);
+            FormChiTietBan form = new FormChiTietBan(idHoaDon);
             this.Hide();
             form.ShowDialog();
             this.Show();
